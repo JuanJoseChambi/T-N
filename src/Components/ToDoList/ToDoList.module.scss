@@ -1,5 +1,13 @@
+@import "../../Styles/mixins";
+@import "../../Styles/variables";
+
 .viewToDoList{
-    width: 600px;
-    height: 600px;
+    @include area(580px, 570px);
+    @include block;
     border: 1px solid gray;
+    h1{
+        width: 100%;
+        text-align: center;
+        font-weight: $Medium;
+    }
 }
