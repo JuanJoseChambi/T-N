@@ -1,5 +1,37 @@
-.viewCreateToDo{
-    width: 400px;
-    height: 600px;
-    border: 1px solid gray;
+@import "../../Styles/mixins";
+@import "../../Styles/variables";
+.viewCreateToDo {
+  @include area(350px, 570px);
+  @include block;
+  @include display(start, center, column);
+  border: 1px solid gray;
+  .containerForm {
+    @include display(space-evenly, center, column);
+    @include area(70%, 150px);
+    background-color: gray;
+    border-radius: 10px;
+    h3 {
+      width: 100%;
+      text-align: center;
+      font-weight: $Light;
+      margin: 10px 0 10px 0;
+    }
+    .form {
+      @include display(space-evenly, center, column);
+      @include area(100%, 100px);
+      textarea {
+        min-width: 180px;
+        min-height: 20px;
+        border-radius: 10px;
+        padding: 5px 10px;
+        font-size: 13px;
+        resize: vertical;
+      }
+      button{
+      margin: 15px 0 15px 0;
+        border-radius: 5px;
+      }
+      //   background-color: red;
+    }
+  }
 }

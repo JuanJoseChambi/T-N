@@ -1,14 +1,16 @@
-import CreateToDo from "../../Components/CreateToDo/CreateToDo"
-import ToDoList from "../../Components/ToDoList/ToDoList"
-import style from "./ToDo.module.scss"
+import CreateToDo from "../../Components/CreateToDo/CreateToDo";
+import ToDoList from "../../Components/ToDoList/ToDoList";
+import style from "./ToDo.module.scss";
 
 function ToDo() {
   return (
     <div className={style.viewToDo}>
-        <CreateToDo/>
-        <ToDoList/>
+      <div className={style.TodoList}>
+        <CreateToDo />
+        <ToDoList />
+      </div>
     </div>
-  )
+  );
 }
 
-export default ToDo
+export default ToDo;

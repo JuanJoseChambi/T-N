@@ -1,0 +1,18 @@
+@mixin block () {
+    background-color: rgb(241, 241, 241);
+    color: black;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 10px 10px 15px 0 rgb(0, 0, 0);
+    border: 1px solid gray;
+}
+@mixin area ($width: 50%, $height: 80vh) {
+    width: $width;
+    min-height: $height;
+}   
+@mixin display ($just:center, $align:center, $flex: row) {
+    display: flex;
+    justify-content: $just;
+    align-items:$align;
+    flex-direction: $flex;
+}

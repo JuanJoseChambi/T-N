@@ -7,4 +7,11 @@
     height: 100vh;
     background-color: #242424;
     color: white;
+    .TodoList{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+        width: 1300px;
+    }
 }
