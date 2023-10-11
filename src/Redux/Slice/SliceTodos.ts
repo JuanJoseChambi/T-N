@@ -1,6 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit"
 import { TodoState } from "../../Interfaces/interfaces"
-import * as actions from "../Actions/Actions"
 
 const initialState: TodoState = {
     todos: []
@@ -16,11 +15,10 @@ export const TodosSlice = createSlice({
         },
         toggleTodo: (state, action) => {
             const id = action.payload;
-            state.todos = state.todos.filter(notes => {
-                if (notes.id !== id) {
-                    notes.completed = !notes.completed
-                }
-            })
+            const note = state.todos.find(notes => notes.id === id);
+            if (note) {
+                note.completed = !note.completed
+            }
 
         },
         removeTodo: (state, action) => {
