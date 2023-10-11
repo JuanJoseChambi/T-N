@@ -2,7 +2,7 @@ import {configureStore} from "@reduxjs/toolkit"
 import SliceTodos from "./Slice/SliceTodos"
 
 export const store = configureStore({
-    reducer : {
+    reducer: {
         todos:SliceTodos
     }
 })

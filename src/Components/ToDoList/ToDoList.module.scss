@@ -2,7 +2,7 @@
 @import "../../Styles/variables";
 
 .viewToDoList{
-    @include area(580px, 570px);
+    @include area(580px, 550px);
     @include block;
     border: 1px solid gray;
     h1{

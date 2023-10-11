@@ -1,7 +1,7 @@
 @import "../../Styles/mixins";
 @import "../../Styles/variables";
 .viewCreateToDo {
-  @include area(350px, 570px);
+  @include area(350px, 550px);
   @include block;
   @include display(start, center, column);
   border: 1px solid gray;

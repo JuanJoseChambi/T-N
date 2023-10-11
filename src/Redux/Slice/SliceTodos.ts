@@ -11,13 +11,21 @@ export const TodosSlice = createSlice({
     initialState: initialState as TodoState,
     reducers:{
         addTodo: (state, action) => {
-
+            const note =  action.payload;
+            state.todos.push(note)  
         },
         toggleTodo: (state, action) => {
+            const id = action.payload;
+            state.todos = state.todos.filter(notes => {
+                if (notes.id !== id) {
+                    notes.completed = !notes.completed
+                }
+            })
 
         },
         removeTodo: (state, action) => {
-
+            const id = action.payload;
+            state.todos = state.todos.filter(notes => notes.id !== id)
         }
     }
 })

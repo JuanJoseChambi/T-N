@@ -1,17 +1,19 @@
-.viewToDo{
+.viewToDo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #242424;
+  color: white;
+  .TodoList {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-direction: row;
-    width: 100%;
-    height: 100vh;
-    background-color: #242424;
-    color: white;
-    .TodoList{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-direction: row;
-        width: 1300px;
-    }
+    width: 1300px;
+    min-height: 100vh;
+    // background-color: red;
+  }
 }
