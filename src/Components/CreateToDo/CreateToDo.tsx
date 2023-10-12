@@ -11,7 +11,7 @@ function CreateToDo() {
     completed:false
   })
   const dispatch = useDispatch();
-  const inputRef = useRef(null)
+  const inputRef = useRef<HTMLTextAreaElement | null>(null)
 
   function hashId () {
     const hash = (Math.random()*100).toString()
@@ -25,7 +25,9 @@ function CreateToDo() {
     if (newTodo.id)  {
       console.log("Tiene Id");
       dispatch(addTodo(newTodo)) 
-      inputRef.current.value = ""
+      if (inputRef.current) {
+        inputRef.current.value = "";
+      }
       setNewTodo({
         id:"",
         text: "",
