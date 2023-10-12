@@ -11,6 +11,7 @@ export const TodosSlice = createSlice({
     reducers:{
         addTodo: (state, action) => {
             const note =  action.payload;
+            // noteHashed =
             state.todos.push(note)  
         },
         toggleTodo: (state, action) => {
