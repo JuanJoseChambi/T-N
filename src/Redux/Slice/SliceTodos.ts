@@ -2,7 +2,7 @@ import {createSlice} from "@reduxjs/toolkit"
 import { TodoState } from "../../Interfaces/interfaces"
 
 const initialState: TodoState = {
-    todos: []
+    todos: [] 
 }
 
 export const TodosSlice = createSlice({

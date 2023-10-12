@@ -6,3 +6,6 @@ export interface Todo {
 export interface TodoState {
     todos: Todo[]
 }
+export interface RootState {
+    todos: TodoState
+}

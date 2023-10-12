@@ -6,16 +6,15 @@ import { addTodo } from "../../Redux/Actions/Actions";
 
 function CreateToDo() {
   const [newTodo, setNewTodo] = useState<Todo>({
-    id:"",
+    id:"dsaddsa",
     text: "",
     completed:false
   })
   const dispatch = useDispatch();
   function handlerSendTodo (e : React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    dispatch(addTodo(newTodo))
-    console.log(newTodo);
-    
+    dispatch(addTodo(newTodo)) 
+       
   }
 
   return (
