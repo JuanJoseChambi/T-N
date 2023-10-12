@@ -1,0 +1,25 @@
+@import "../../Styles/mixins";
+@import "../../Styles/variables";
+
+.itemTodo{
+    @include area(90%, 50px);
+    @include display(start, center, row);
+    border-radius: 10px;
+    background-color: rgb(40, 39, 39);
+    color: white;
+    box-shadow: 10px 5px 15px 0px black;
+    margin: 10px 0;
+    .checkTodo {
+        margin: 0 10px;
+        background-color: transparent;
+        cursor: pointer;
+    }
+}
+
+.textCompleted {
+    text-decoration: line-through;
+    font-weight: $ExtraLight;
+}
+.incompleted {
+    font-weight: $Thin;
+}

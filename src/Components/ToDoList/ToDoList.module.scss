@@ -4,6 +4,7 @@
 .viewToDoList{
     @include area(580px, 550px);
     @include block;
+    @include display(start, center, column);
     border: 1px solid gray;
     h1{
         width: 100%;
