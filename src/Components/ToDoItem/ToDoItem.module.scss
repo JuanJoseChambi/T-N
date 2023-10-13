@@ -1,44 +1,57 @@
 @import "../../Styles/mixins";
 @import "../../Styles/variables";
 
-.itemTodo{
-    @include display(space-between, center, row);
-    width: 90%;
-    min-height: 30px;
-    max-height: 200px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    border-radius: 10px;
-    background-color: rgb(40, 39, 39);
-    color: white;
-    box-shadow: 10px 5px 15px 0px black;
+.itemTodo {
+  @include display(space-between, start, row);
+  width: 90%;
+  min-height: 40px;
+  max-height: 200px;
+  margin: 10px 0;
+  background-color: rgb(25, 24, 24);
+  position: relative;
+  //   padding: 10px 0;
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px 0 black;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+  .checkTodo {
+    margin: 0 10px;
+    background-color: transparent;
+    // background-color: blue;
+    position: sticky;
+    top: 10px;
+    cursor: pointer;
+  }
+  .containerText {
+    width: 100%;
+    // min-height: 200px;
+    max-height: 50px;
+    // background-color: blue;
+    position: relative;
+    padding: none;
     margin: 10px 0;
-    padding: 10px 0;
-    .checkTodo {
-        margin: 0 10px;
-        background-color: transparent;
-        cursor: pointer;
-    }
 
     .textCompleted {
-        text-decoration: line-through;
-        font-weight: $ExtraLight;
+      text-decoration: line-through;
+      font-weight: $ExtraLight;
+      margin: 0;
+      color: white;
     }
     .incompleted {
-        // min-width: 410px;
-        // max-width: 100%;
-        max-height: 100px;
-        // height: auto;
-        font-weight: $Thin;
-        text-align: start;
-        // padding: 10px 0;
+      font-weight: $Thin;
+      text-align: start;
+      color: white;
+      margin: 0;
     }
+  }
 
-    .deleteTodo{
-        background-color: transparent;
-        cursor: pointer;
-        color: white;
-        font-size: 22px;
-    }
+  .deleteTodo {
+    background-color: transparent;
+    position: sticky;
+    top: 15px;
+    cursor: pointer;
+    color: white;
+    font-size: 22px;
+  }
 }
-

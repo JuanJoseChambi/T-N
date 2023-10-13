@@ -14,4 +14,12 @@
         text-align: center;
         font-weight: $Medium;
     }
+    .containerTodos{
+        @include display (start, center, column);
+        width: 100%;
+        min-height: 80vh;
+        max-height: 80vh;
+        overflow-y: auto;
+        // background-color: red;
+    }
 }
