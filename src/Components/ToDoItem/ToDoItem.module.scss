@@ -2,18 +2,18 @@
 @import "../../Styles/variables";
 
 .itemTodo{
-    @include area(90%, 50px);
-    min-height: 50px;
+    @include display(space-between, center, row);
+    width: 90%;
+    min-height: 30px;
+    max-height: 200px;
     overflow-y: auto;
     overflow-x: hidden;
-    @include display(space-between, center, row);
     border-radius: 10px;
     background-color: rgb(40, 39, 39);
     color: white;
     box-shadow: 10px 5px 15px 0px black;
     margin: 10px 0;
     padding: 10px 0;
-    position: relative;
     .checkTodo {
         margin: 0 10px;
         background-color: transparent;
@@ -25,12 +25,13 @@
         font-weight: $ExtraLight;
     }
     .incompleted {
-        max-width: 410px;
-        // height: 100px;
-        // max-height: 200px;
+        // min-width: 410px;
+        // max-width: 100%;
+        max-height: 100px;
+        // height: auto;
         font-weight: $Thin;
-        // background-color: gray;
-        // overflow-y: auto;
+        text-align: start;
+        // padding: 10px 0;
     }
 
     .deleteTodo{
