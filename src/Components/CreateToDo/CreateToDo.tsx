@@ -39,12 +39,28 @@ function CreateToDo() {
     }
   }
 
+  function handlerPressKey (e : React.KeyboardEvent<HTMLTextAreaElement>) {
+    if (e.key === "Enter") {
+      if (newTodo.text) {
+        dispatch(addTodo(newTodo)) 
+        if (inputRef.current) {
+          inputRef.current.value = "";
+        }
+        setNewTodo({
+          id:"",
+          text: "",
+          completed: false
+        })
+      } 
+    }  
+  }
+
   return (
     <div className={style.viewCreateToDo}>
         <div className={style.containerForm}>
             <h3>Create To Do</h3>
             <form onSubmit={handlerSendTodo} className={style.form}>
-                <textarea onChange={(e) => setNewTodo({...newTodo,text:e.target.value, id: hashId()})} ref={inputRef}/>
+                <textarea onKeyDown={handlerPressKey} onChange={(e) => setNewTodo({...newTodo,text:e.target.value, id: hashId()})} ref={inputRef}/>
                 <button type="submit">Crear To Do</button>
             </form>
         </div>
