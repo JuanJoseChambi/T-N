@@ -3,6 +3,9 @@
 
 .viewToDoList{
     @include area(580px, 550px);
+    max-height: 80vh;
+    overflow-y: auto;
+    // overflow-x: auto;
     @include block;
     @include display(start, center, column);
     border: 1px solid gray;

@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useState, useRef } from "react";
 import style from "./CreateToDo.module.scss";
 import { Todo } from "../../Interfaces/interfaces";
 import {useDispatch} from "react-redux"
@@ -22,7 +22,7 @@ function CreateToDo() {
   function handlerSendTodo (e : React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
       
-    if (newTodo.id)  {
+    if (newTodo.id && newTodo.text)  {
       console.log("Tiene Id");
       dispatch(addTodo(newTodo)) 
       if (inputRef.current) {
@@ -38,9 +38,6 @@ function CreateToDo() {
       
     }
   }
-  useEffect(() => {
-    
-  }, [newTodo]);
 
   return (
     <div className={style.viewCreateToDo}>

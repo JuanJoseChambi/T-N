@@ -3,23 +3,41 @@
 
 .itemTodo{
     @include area(90%, 50px);
-    @include display(start, center, row);
+    min-height: 50px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    @include display(space-between, center, row);
     border-radius: 10px;
     background-color: rgb(40, 39, 39);
     color: white;
     box-shadow: 10px 5px 15px 0px black;
     margin: 10px 0;
+    padding: 10px 0;
+    position: relative;
     .checkTodo {
         margin: 0 10px;
         background-color: transparent;
         cursor: pointer;
     }
+
+    .textCompleted {
+        text-decoration: line-through;
+        font-weight: $ExtraLight;
+    }
+    .incompleted {
+        max-width: 410px;
+        // height: 100px;
+        // max-height: 200px;
+        font-weight: $Thin;
+        // background-color: gray;
+        // overflow-y: auto;
+    }
+
+    .deleteTodo{
+        background-color: transparent;
+        cursor: pointer;
+        color: white;
+        font-size: 22px;
+    }
 }
 
-.textCompleted {
-    text-decoration: line-through;
-    font-weight: $ExtraLight;
-}
-.incompleted {
-    font-weight: $Thin;
-}
