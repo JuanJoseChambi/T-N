@@ -1,0 +1,23 @@
+@import "../../Styles/mixins";
+@import "../../Styles/variables";
+.searchComponent {
+  @include area(10%, auto);
+  @include display(center, center, row);
+  background-color: #ffffff;
+  border-radius: 55px;
+  font-size: 14px;
+  padding: 5px 15px;
+  transition: width .5s;
+  .input {
+    width: 100%;
+    // background-color: transparent;
+    // background-color: beige;
+  }
+  label {
+    // background-color: blue;
+    cursor: pointer;
+  }
+}
+.divClicked{
+    width: 30%;
+}

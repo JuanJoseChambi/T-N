@@ -2,7 +2,7 @@
 @import "../../Styles/variables";
 
 .viewToDoList{
-    @include area(580px, 550px);
+    @include area(280px, 250px);
     overflow-y: auto;
     max-height: 80vh;
     // overflow-x: auto;

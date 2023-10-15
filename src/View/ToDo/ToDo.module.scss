@@ -1,19 +1,21 @@
+@import "../../Styles/mixins";
+@import "../../Styles/variables";
+
 .viewToDo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  width: 100%;
-  min-height: 100vh;
-  background-color: #242424;
+  @include area(100%, 100vh);
+  @include display(center,center, row);
+  background-color: #0e0d0d;
   color: white;
   .TodoList {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
-    width: 1300px;
-    min-height: 100vh;
-    // background-color: red;
+    @include area(1300px, 560px);
+    @include display(center,center, column);
+    background-color: red;
+    .titleToDo{
+      font-weight: $Thin;
+      font-size: 80px;
+      @include area(100%, auto);
+      // background-color: gray;
+      text-align: center;
+    }
   }
 }
