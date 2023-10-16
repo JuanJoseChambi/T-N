@@ -21,6 +21,8 @@ function Options() {
           };
     },[])
     const {isVisible, isClosing, isOpen, onClose} = useFade()
+    console.log(isVisible);
+    
   return (
     <>
         <div className={`${style.optionsComponent} ${divClicked ? style.divActive : null}`} ref={divRef} >
