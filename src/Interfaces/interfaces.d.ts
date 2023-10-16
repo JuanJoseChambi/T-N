@@ -1,3 +1,4 @@
+// --------------------------------
 export interface Todo {
     id:string
     text:string
@@ -9,3 +10,17 @@ export interface TodoState {
 export interface RootState {
     todos: TodoState
 }
+// --------------------------------
+
+
+
+// --------------------------------
+export interface PropsUseFade {
+    onClose: () => void;
+    isVisible: boolean;
+    isClosing: boolean;
+}
+export interface useFadeType extends PropsUseFade  {
+    isOpen: () => void;
+};
+// --------------------------------

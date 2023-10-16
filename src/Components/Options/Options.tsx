@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import style from "./Options.module.scss";
+import Modal from "../Modal/Modal";
+import { useFade } from "../../Hooks/useFade";
 
 function Options() {
     const divRef = useRef<HTMLDivElement | null>(null)
@@ -18,11 +20,13 @@ function Options() {
             document.removeEventListener("click", clickOutside);
           };
     },[])
-
+    const {isVisible, isClosing, isOpen, onClose} = useFade()
   return (
     <div className={`${style.optionsComponent} ${divClicked ? style.divActive : null}`} ref={divRef} >
         <button className={style.btn} onClick={() => setDivClicked(!divClicked)}><i className='bx bxs-chevrons-down'></i></button>
-        Options
+        <button onClick={isOpen}>Create To Do</button>
+        <button>Edit To Do</button>
+        <Modal isVisible={isVisible} isClosing={isClosing} onClose={onClose}/>
     </div>
   )
 }
