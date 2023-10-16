@@ -16,7 +16,6 @@ function ToDo() {
           <ToDoList />
           <ToDoListCompleted/>
         </div>
-        {/* <CreateToDo /> */}
       </div>
     </div>
   );
