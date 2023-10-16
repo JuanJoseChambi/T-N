@@ -8,7 +8,7 @@ function ToDoList() {
   const todosOrder = [...todos].reverse();
   return (
     <div className={style.viewToDoList}>
-      <h1>To Do List</h1>
+      <p className={style.titleToDoList}>To Do List</p>
       <div className={style.containerTodos}>
         {todosOrder.map((todo) => (
           <ToDoItem

@@ -8,14 +8,17 @@
   color: white;
   .TodoList {
     @include area(1300px, 560px);
-    @include display(center,center, column);
-    background-color: red;
+    @include display(space-evenly,center, column);
+    // background-color: red;
     .titleToDo{
       font-weight: $Thin;
       font-size: 80px;
       @include area(100%, auto);
       // background-color: gray;
       text-align: center;
+    }
+    .listToDos{
+      @include display(center,center, row);
     }
   }
 }

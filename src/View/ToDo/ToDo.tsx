@@ -2,6 +2,8 @@
 import ToDoList from "../../Components/ToDoList/ToDoList";
 import SearchBar from "../../Components/SearchBar/SearchBar";
 import style from "./ToDo.module.scss";
+import ToDoListCompleted from "../../Components/ToDoListCompleted/ToDoListCompleted";
+import Options from "../../Components/Options/Options";
 
 function ToDo() {
   return (
@@ -9,9 +11,10 @@ function ToDo() {
       <div className={style.TodoList}>
         <h1 className={style.titleToDo}>To List</h1>
         <SearchBar/>
-        <div>
+        <div className={style.listToDos}>
+          <Options/>
           <ToDoList />
-
+          <ToDoListCompleted/>
         </div>
         {/* <CreateToDo /> */}
       </div>
