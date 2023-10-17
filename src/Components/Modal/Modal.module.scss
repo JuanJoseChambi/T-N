@@ -26,7 +26,7 @@
     }
   }
   .modal {
-    @include display(space-evenly, start, column);
+    @include display(space-evenly, center, column);
     width: 500px;
     height: 300px;
     background-color: rgb(25, 24, 24);
@@ -44,7 +44,7 @@
   .modal p {
     font-weight: $Thin;
     width: 100%;
-    text-align: start;
+    text-align: center;
   }
   .modal input {
     border-radius: 5px;
@@ -70,9 +70,9 @@
     color: white;
     margin: 5px 0;
   }
-  .modal button {
-    margin: 20px 0px 20px 200px;
-  }
+  // .modal button {
+    // margin: 20px 0px 20px 200px;
+  // }
 }
 
 .visibleModal {

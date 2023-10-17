@@ -1,10 +1,20 @@
 import {createSlice} from "@reduxjs/toolkit"
-import { TodoState } from "../../Interfaces/interfaces"
+import { Todo, TodoState } from "../../Interfaces/interfaces"
+import { useLocalStorage } from "../../Hooks/useLocalStorage"
+
+const { getItemFromLocalStorage, setItemInLocalStorage } = useLocalStorage()
+
+const todosFromLocalStorage = getItemFromLocalStorage("Todos");
+const parsedTodos  = todosFromLocalStorage ? JSON.parse(todosFromLocalStorage) : [];
 
 const initialState: TodoState = {
-    todosBackup: [],
-    todos: []
+    todosBackup: parsedTodos  ,
+    todos: parsedTodos 
 }
+
+const saveTodosToLocalStorage = (todosBackup: Todo[]) => {
+    setItemInLocalStorage("Todos", todosBackup);
+  };
 
 export const TodosSlice = createSlice({
     name:"todos",
@@ -14,6 +24,7 @@ export const TodosSlice = createSlice({
             const note =  action.payload;
             state.todos.push(note)  
             state.todosBackup.push(note)
+            saveTodosToLocalStorage( state.todosBackup)
         },
         toggleTodo: (state, action) => {
             const id = action.payload;
@@ -23,19 +34,17 @@ export const TodosSlice = createSlice({
                 note.completed = !note.completed 
                 noteBackup.completed = !noteBackup.completed
             }
+            saveTodosToLocalStorage( state.todosBackup)
         },
         removeTodo: (state, action) => {
             const id = action.payload;
             state.todos = state.todos.filter(notes => notes.id !== id)
             state.todosBackup = state.todosBackup.filter(notes => notes.id !== id)
+            saveTodosToLocalStorage( state.todosBackup)
         },
         searchTodo: (state, action) => {
             const wanted = action.payload;
-            if (wanted === "") {
-                state.todos = state.todosBackup
-            }else{
-                state.todos = state.todos.filter(todo => todo.text === wanted)
-            }
+            state.todos = state.todosBackup.filter(todo => todo.text.includes(wanted))
         },
         resetTodos: (state) => {
             state.todos = state.todosBackup

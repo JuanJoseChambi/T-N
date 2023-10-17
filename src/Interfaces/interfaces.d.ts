@@ -6,7 +6,7 @@ export interface Todo {
 }
 export interface TodoState {
     todos: Todo[]
-    todosBackup: Todo[]
+    todosBackup: Todo[] 
 }
 export interface RootState {
     todos: TodoState
