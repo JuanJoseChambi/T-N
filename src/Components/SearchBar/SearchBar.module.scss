@@ -1,7 +1,7 @@
 @import "../../Styles/mixins";
 @import "../../Styles/variables";
 .searchComponent {
-  @include area(10%, auto);
+  @include area(30%, auto);
   @include display(center, center, row);
   background-color: #ffffff;
   border-radius: 55px;
@@ -18,6 +18,6 @@
     cursor: pointer;
   }
 }
-.divClicked{
-    width: 30%;
-}
+// .divClicked{
+//     width: 30%;
+// }
