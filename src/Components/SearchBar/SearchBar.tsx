@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import style from "./SearchBar.module.scss";
 import { useDispatch } from "react-redux";
 import { resetTodos, searchTodo } from "../../Redux/Actions/Actions";
 
 function SearchBar() { 
-    const [search, setSearch] = useState<string>(" ")
+    const [search, setSearch] = useState<string>("")
+    const inputRef = useRef<HTMLInputElement | null>(null)
     
     const dispatch = useDispatch()
 
@@ -14,13 +15,16 @@ function SearchBar() {
     }
     function handlerReset () {
       dispatch(resetTodos())
+
     }
 
   return (
-    <div className={`${style.searchComponent}`}>
-        <input className={style.input} type="text" placeholder="Buscar Tarea" onChange={(e) => setSearch(e.target.value)}/> 
-        <label onClick={handlerSearch}>🔍</label>
-        <button onClick={handlerReset}>Reset</button>
+    <div className={style.searchComponentDiv}>
+      <div className={`${style.searchComponent}`}>
+          <input className={style.input} type="text" placeholder="Buscar Tarea" onChange={(e) => setSearch(e.target.value)} ref={inputRef} /> 
+          <label className={style.iconSearch} onClick={handlerSearch}><i className='bx bx-search-alt'></i></label>
+      </div>
+      <button className={style.btnReset} onClick={handlerReset}>{search ? <i className='bx bx-refresh' ></i>:  null}</button>
     </div>
   )
 }

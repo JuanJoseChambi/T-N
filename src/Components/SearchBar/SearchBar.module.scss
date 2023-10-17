@@ -1,5 +1,10 @@
 @import "../../Styles/mixins";
 @import "../../Styles/variables";
+.searchComponentDiv{
+  @include display(center, center, row);
+  width: 100%;
+  // background-color: red
+}
 .searchComponent {
   @include area(30%, auto);
   @include display(center, center, row);
@@ -13,10 +18,25 @@
     // background-color: transparent;
     // background-color: beige;
   }
-  label {
+  .iconSearch {
     // background-color: blue;
     cursor: pointer;
+    color: black;
+    font-size: 13px;
+    transform: scale(1.25)
+    // background-color: red;
   }
+}
+.btnReset{
+  @include display(center, center, row);
+  background-color: transparent;
+  // background-color: red;
+  width: 10px;
+  height: 10px;
+  color: white;
+  font-size: 18px;
+  margin: 0px 10px;
+  cursor: pointer;
 }
 // .divClicked{
 //     width: 30%;

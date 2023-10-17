@@ -19,10 +19,10 @@ export const TodosSlice = createSlice({
             const id = action.payload;
             const note = state.todos.find(notes => notes.id === id);
             const noteBackup = state.todosBackup.find(notes => notes.id === id);
-            if (note && noteBackup) {
-                note.completed = !note.completed
+            if (note && noteBackup ) {
+                note.completed = !note.completed 
+                noteBackup.completed = !noteBackup.completed
             }
-
         },
         removeTodo: (state, action) => {
             const id = action.payload;
@@ -31,10 +31,10 @@ export const TodosSlice = createSlice({
         },
         searchTodo: (state, action) => {
             const wanted = action.payload;
-            if (wanted === " ") {
+            if (wanted === "") {
                 state.todos = state.todosBackup
             }else{
-                state.todos = state.todosBackup.filter(todo => todo.text === wanted)
+                state.todos = state.todos.filter(todo => todo.text === wanted)
             }
         },
         resetTodos: (state) => {
