@@ -16,3 +16,6 @@
     align-items:$align;
     flex-direction: $flex;
 }
+@mixin shadow ($x: 5px, $y: 5px, $shadow: 10px , $all: 0px , $color: black) {
+    box-shadow: $x $y $shadow $all $color;
+}

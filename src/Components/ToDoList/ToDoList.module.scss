@@ -4,28 +4,31 @@
 .viewToDoList{
     width: 400px;
     height: 300px;
-    // border: 1px solid white;
-    background-color: gray;
-
-    // Circulo animacion
-    // clip-path: circle(10% at 9% 12%);
-    // transition: clip-path .5s;
-    // &:hover{
-        // clip-path: circle(100%);
-    // }
-
-
+    // background-color: gray;
+    // border: 1px solid gray;
+    overflow-y: auto;
+    overflow-x: hidden;
     .titleToDoList{
         width: 100%;
         text-align: center;
         font-weight: $ExtraLight;
-        padding: 10px 0
+        padding: 10px 0;
         // background-color: red
+        // border-bottom: 1px solid white
     }
     .containerTodos{
         @include display (start, center, column);
         width: 100%;
-        height: 260px;
-        border: 1px solid white;
+        overflow-y: auto;
     }
 }
+.viewToDoList::-webkit-scrollbar {
+    width: 4px;
+    background-color: #0E0D0D;
+    transition: background-color .5s;
+  }
+  .viewToDoList::-webkit-scrollbar-thumb {
+    background-color: #ccc9cc;
+    border-radius: 50px;
+    // border: 1px solid rgb(255, 0, 255);
+  }

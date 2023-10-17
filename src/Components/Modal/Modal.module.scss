@@ -7,15 +7,74 @@
   height: 100vh;
   position: absolute;
   top: 0;
-  background-color: #00000075;
+  background-color: #00000090;
   opacity: 0;
+  z-index: 100;
   transition: opacity 0.5s;
   .btnCloseModal {
+    @include display;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    background-color: transparent;
+    border-radius: 50px;
+    color: gray;
+    transition: color 0.5s;
+    &:hover {
+      color: white;
+    }
+  }
+  .modal {
+    @include display(space-evenly, start, column);
+    width: 500px;
+    height: 300px;
+    background-color: rgb(25, 24, 24);
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid gray;
+    @include shadow(10px, 15px, 15px, 0, rgb(29, 29, 29));
+  }
+  .modal h2 {
+    font-size: 35px;
+    font-weight: $ExtraLight;
+    width: 100%;
+    text-align: center;
+  }
+  .modal p {
+    font-weight: $Thin;
+    width: 100%;
+    text-align: start;
+  }
+  .modal input {
+    border-radius: 5px;
+    width: 50%;
+    padding: 7px 8px;
+    font-size: 13px;
+    font-weight: $ExtraLight;
+    border: 1px solid rgb(195, 191, 191);
+    background-color: transparent;
+    color: white;
+    margin: 5px 0;
+    transition: border 0.5s;
+    &:hover {
+      border: 1px solid white;
+    }
+  }
+  .modal textarea {
+    border-radius: 5px;
+    padding: 7px 8px;
+    font-size: 13px;
+    border-bottom: 1px solid white;
+    background-color: transparent;
+    color: white;
+    margin: 5px 0;
+  }
+  .modal button {
+    margin: 20px 0px 20px 200px;
   }
 }
+
 .visibleModal {
   opacity: 1;
 }

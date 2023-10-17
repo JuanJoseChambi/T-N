@@ -1,24 +1,51 @@
+@import "../../Styles/mixins";
+@import "../../Styles/variables";
+
 .optionsComponent {
-  width: 200px;
-  height: 300px;
+  @include display(center,center, column);
+  @include area(200px, 300px);
   color: black;
-  position: relative;
-  background-color: transparent;
-  clip-path: circle(10% at 85% 9%);
-  transition: clip-path .5s, background-color .5s;
-  .btn{
-    position: absolute;
-    top: 0px;
-    right: 5px;
-    font-size: 25px;
-    background-color: transparent;
-    color: rgb(255, 253, 253);
-  }
+  border-radius: 50px 0 0px 50px;
+
+
+
+  // transition: clip-path .5s, background-color .5s;
+  // background-color: transparent;
+  // clip-path: circle(10% at 85% 9%);
+  // .btn{
+  //   position: absolute;
+  //   top: 0px;
+  //   right: 5px;
+  //   font-size: 25px;
+  //   background-color: transparent;
+  //   color: rgb(255, 253, 253);
+  // }
 }
-.divActive{
-    clip-path: circle(100%);
-    background-color: beige;
-    .btn{
-        color: black;
-    }
-}
+
+
+
+
+
+
+
+
+
+
+// .divActive{
+    // clip-path: circle(100%);
+    // animation-name: buttons;
+    // animation-duration: 1s;
+    // animation-delay: ;
+    // background-color: transparent;
+    // .btn{
+        // color: black;
+    // }
+// }
+// @keyframes buttons {
+//   0% {
+//     background-color: beige;
+//   }
+//   100%{
+//     background-color: #0E0D0D;
+//   }
+// }

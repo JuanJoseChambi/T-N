@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { Todo } from "../../Interfaces/interfaces"
 import style from "./ToDoItem.module.scss";
 import { removeTodo, toggleTodo } from "../../Redux/Actions/Actions";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 function ToDoItem({id, text, completed } : Todo) {
   const dispatch = useDispatch();
@@ -13,10 +13,10 @@ function ToDoItem({id, text, completed } : Todo) {
   function handlerDeleteToDo (id: string) {
     dispatch(removeTodo(id))
   }
-  useEffect(() => {
-    console.log(text);
+  // useEffect(() => {
+    // console.log(text);
     
-  },[text])
+  // },[text])
   
   return (
     <div key={id} className={style.itemTodo}>

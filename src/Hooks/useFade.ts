@@ -1,7 +1,7 @@
 import { useState } from "react"
-import { useFadeType } from "../Interfaces/interfaces";
+import { PropsUseFade } from "../Interfaces/interfaces";
 
-export function useFade (): useFadeType {
+export function useFade (): PropsUseFade {
     const [isVisible, setIsVisible] = useState(false)
     const [isClosing, setIsClosing] = useState(false)
 

@@ -1,22 +1,22 @@
 import { useEffect } from "react";
-import { PropsUseFade } from "../../Interfaces/interfaces";
+import { modalProps } from "../../Interfaces/interfaces";
 import style from "./Modal.module.scss";
 
-function Modal({ isVisible, isClosing, onClose }: PropsUseFade) {
+function Modal({ isVisible, isClosing, onClose, children }: modalProps) {
   if (!isVisible) {
     return null;
   }
-
   useEffect(() => {
-    console.log(isVisible, isClosing);
-  }, []);
+    
+  
+  }, [isVisible])
 
   return (
-    <div
-      className={`${style.modalComponent} ${isVisible ? style.visibleModal : null} ${isClosing ? style.notVisibleModal : null}`}>
-      <button className={style.btnCloseModal} onClick={onClose}>
-        x
-      </button>
+    <div className={`${style.modalComponent} ${isClosing ? style.notVisibleModal : null} ${isVisible ? style.visibleModal : null} `}>
+      <button className={style.btnCloseModal} onClick={onClose}><i className='bx bx-x-circle'></i></button>
+      <section className={style.modal}>
+        {children}
+      </section>
     </div>
   );
 }

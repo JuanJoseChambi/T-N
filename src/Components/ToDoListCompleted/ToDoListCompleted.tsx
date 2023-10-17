@@ -5,10 +5,10 @@ import ToDoItem from "../ToDoItem/ToDoItem";
 
 function ToDoListCompleted() {
     const { todos } = useSelector((state: RootState) => state.todos);
-    const todosOrder = [...todos].reverse();
+    const todosOrder = [...todos].reverse().filter(todos => todos.completed === true);
     return (
       <div className={style.viewToDoList}>
-        <p className={style.titleToDoList}>To Do List</p>
+        <p className={style.titleToDoList}>To Do Complete</p>
         <div className={style.containerTodos}>
           {todosOrder.map((todo) => (
             <ToDoItem

@@ -24,10 +24,10 @@
     cursor: pointer;
   }
   .containerText {
-    width: 100%;
+    width: 260px;
     min-height: 20px;
     max-height: 200px;
-    // background-color: blue;
+    background-color: blue;
     position: relative;
     padding: none;
     margin: 10px 0;
@@ -44,9 +44,10 @@
   }
 
   .deleteTodo {
+    margin: 0 10px;
     background-color: transparent;
     position: sticky;
-    top: 15px;
+    top: 7px;
     cursor: pointer;
     color: white;
     font-size: 22px;

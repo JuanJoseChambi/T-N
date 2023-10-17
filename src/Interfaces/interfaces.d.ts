@@ -13,14 +13,22 @@ export interface RootState {
 // --------------------------------
 
 
-
 // --------------------------------
-export interface PropsUseFade {
+export interface PropsUseFade  {
+    isOpen: () => void;
     onClose: () => void;
     isVisible: boolean;
     isClosing: boolean;
 }
-export interface useFadeType extends PropsUseFade  {
-    isOpen: () => void;
+export interface modalProps extends Omit<PropsUseFade, 'isOpen'>  {
+    children: JSX.Element[] | JSX.Element
 };
+// --------------------------------
+
+
+// --------------------------------
+export type btnsProps = {
+    children: JSX.Element | JSX.Element[] | string 
+    onClick: () => void
+}
 // --------------------------------
