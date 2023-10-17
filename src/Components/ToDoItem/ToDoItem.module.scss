@@ -4,25 +4,24 @@
 .itemTodo {
   @include display(space-between, start, row);
   width: 90%;
-//   min-height: 40px;
-//   max-height: 200px;
   margin: 10px 0;
   background-color: rgb(25, 24, 24);
   position: relative;
-  //   padding: 10px 0;
   border-radius: 10px;
-  // background-color: red;
   box-shadow: 10px 10px 15px 0 black;
-
   overflow-y: auto;
   overflow-x: hidden;
+  opacity: 0;
+  transition: opacity 1s;
   .checkTodo {
     margin: 0 10px;
     background-color: transparent;
-    // background-color: blue;
     position: sticky;
-    top: 10px;
+    top: 8px;
     cursor: pointer;
+    font-size: 24px;
+    font-weight: $Thin;
+    color: white;
   }
   .containerText {
     width: 280px;
@@ -44,7 +43,7 @@
   }
 
   .deleteTodo {
-    margin: 0 10px;
+    margin: 0px 10px;
     background-color: transparent;
     position: sticky;
     top: 7px;
@@ -52,6 +51,9 @@
     color: white;
     font-size: 22px;
   }
+}
+.visibleToDos{
+  opacity: 1;
 }
 .itemTodo::-webkit-scrollbar {
   width: 4px;

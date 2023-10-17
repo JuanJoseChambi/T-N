@@ -8,7 +8,7 @@ function ToDoListCompleted() {
     const todosOrder = [...todos].reverse().filter(todos => todos.completed === true);
     return (
       <div className={style.viewToDoList}>
-        <p className={style.titleToDoList}>To Do Complete</p>
+        <p className={style.titleToDoList}>Tareas Completas</p>
         <div className={style.containerTodos}>
         {todosOrder.length > 0 ? todosOrder.map((todo) => (
           <ToDoItem
@@ -19,7 +19,7 @@ function ToDoListCompleted() {
           />
         )): 
        ( <div className={style.notTodos}>
-          <p>No existen Todos Completados</p>
+          <p>No Hay Tareas Completadas</p>
         </div>)
         }
         </div>

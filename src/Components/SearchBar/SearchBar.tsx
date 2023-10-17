@@ -24,7 +24,7 @@ function SearchBar() {
 
   return (
     <div className={`${style.searchComponent} ${searchClick? style.divClicked:null}`} onClick={() => setSearchClick(!searchClick)} ref={divSearch}>
-        <input className={style.input} type="text" placeholder="Search To Do" ref={inputSearch}/> 
+        <input className={style.input} type="text" placeholder="Buscar Tarea" ref={inputSearch}/> 
         <label>🔍</label>
     </div>
   )
