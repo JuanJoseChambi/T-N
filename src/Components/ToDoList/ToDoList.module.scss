@@ -20,6 +20,13 @@
         @include display (start, center, column);
         width: 100%;
         overflow-y: auto;
+        .notTodos{
+            @include display;
+            width: 90%;
+            height: 100px;
+            font-weight: $Thin;
+            color: white;
+        }
     }
 }
 .viewToDoList::-webkit-scrollbar {
