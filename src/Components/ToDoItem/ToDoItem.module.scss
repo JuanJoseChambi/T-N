@@ -52,6 +52,7 @@
     font-size: 22px;
   }
 }
+
 .visibleToDos{
   opacity: 1;
 }
@@ -64,4 +65,8 @@
   background-color: #ccc9cc;
   border-radius: 50px;
   // border: 1px solid rgb(255, 0, 255);
+}
+.notVisibleItem{
+  opacity: 0;
+  background-color: red;
 }

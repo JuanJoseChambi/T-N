@@ -18,7 +18,9 @@
       text-align: center;
     }
     .listToDos{
-      @include display(center,center, row);
+      @include display(space-evenly,center, row);
+      width: 90%;
+      // background-color: red;
     }
   }
 }

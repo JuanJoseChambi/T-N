@@ -44,6 +44,15 @@
   .modal p {
     font-weight: $Thin;
     width: 100%;
+    height: 10px;
+    text-align: center;
+  }
+  .modal b{
+    font-size: 13px;
+    color: red;
+    font-weight: $Light;
+    width: 100%;
+    height: 10px;
     text-align: center;
   }
   .modal input {

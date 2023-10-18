@@ -12,6 +12,7 @@ function Options() {
         text: "",
         completed:false
     })
+    const [errors, setErrors] = useState<string | null>(null)
     const divRef = useRef<HTMLDivElement | null>(null)
     const dispatch = useDispatch();
     const {isVisible, isClosing, isOpen, onClose} = useFade()
@@ -42,8 +43,13 @@ function Options() {
       }
 
       function handlerSendNewToDo () {
-        handlerSendTodo()
-        onClose()
+        if (newToDo.text) {
+          handlerSendTodo()
+          onClose()
+          setErrors(null)
+        }else{
+          setErrors("Escriba la Tarea")
+        }
       }
   return (
     <>
@@ -51,12 +57,12 @@ function Options() {
             <Button onClick={isOpen}>Create To Do</Button>
         </div>
         <Modal isVisible={isVisible} isClosing={isClosing} onClose={onClose}>
-            <h2>Create To Do</h2>
-            <p>Create To Do</p>
-            <input type="text" placeholder="To Do" onChange={(e) => setNewToDo({...newToDo, text:e.target.value, id: hashId()})}/>
-            {/* <textarea></textarea> */}
+            <h2>Crear Tarea</h2>
+            <p>{newToDo.text?"Presione Enter para Anadir Tarea":null}</p>
+            <input type="text" placeholder="Tarea" onKeyDown={(e) => {e.key === "Enter" ? handlerSendNewToDo() : null}} onChange={(e) => setNewToDo({...newToDo, text:e.target.value, id: hashId()})}/>
+            {/* <input type="checkbox" /> */}
             <Button onClick={handlerSendNewToDo}>Crear To Do</Button>
-              
+            <b>{!newToDo.text? errors: null}</b>
         </Modal>
     </>
   )
