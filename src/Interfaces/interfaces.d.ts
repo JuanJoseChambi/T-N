@@ -1,3 +1,10 @@
+
+// --------------------------------
+export interface Children {
+    children: JSX.Element[] | JSX.Element | string
+}
+// --------------------------------
+
 // --------------------------------
 export interface Todo {
     id:string
@@ -29,8 +36,14 @@ export interface modalProps extends Omit<PropsUseFade, 'isOpen'>  {
 
 
 // --------------------------------
-export type btnsProps = {
-    children: JSX.Element | JSX.Element[] | string 
+export interface btnsProps extends Children {
     onClick: () => void
+}
+// --------------------------------
+
+
+// --------------------------------
+export interface TooltipProp extends Children {
+    text: string
 }
 // --------------------------------

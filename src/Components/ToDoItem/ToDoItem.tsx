@@ -21,30 +21,28 @@ if (date) {
 
   const ToDos = useRef<HTMLDivElement | null>(null)
   const dispatch = useDispatch();
+  const {isClosing, isVisible ,isOpen ,onClose } = useFade()
+  useFadeOnScroll(ToDos, style.visibleToDos)
 
-  function handlerCheckToDo (id : string){
+  function handlerCheckToDo (id : string): void{
     dispatch(toggleTodo(id))
   }
 
-  useFadeOnScroll(ToDos, style.visibleToDos)
-
-  const {isClosing, isVisible ,isOpen ,onClose } = useFade()
-
-  function handlerDeleteToDo (id: string) {
+  function handlerDeleteToDo (id: string): void {
     onClose()
     dispatch(removeTodo(id))
   }
   return (
     <>
-      <div key={id} className={`${style.itemTodo}`} onClick={isOpen} ref={ToDos}>
-        <button onClick={() => handlerCheckToDo(id)} className={style.checkTodo}> {completed ? <i className='bx bx-checkbox-checked' ></i> : <i className='bx bx-checkbox'></i>}</button>
-        <div className={style.containerText}>
-          <p className={`${completed ? style.textCompleted: style.incompleted}`}>{text}</p>
+        <div key={id} className={`${style.itemTodo}`} onClick={isOpen} ref={ToDos}>
+          <button onClick={() => handlerCheckToDo(id)} className={style.checkTodo}> {completed ? <i className='bx bx-checkbox-checked' ></i> : <i className='bx bx-checkbox'></i>}</button>
+          <div className={style.containerText}>
+            <p className={`${completed ? style.textCompleted: style.incompleted}`}>{text}</p>
+          </div>
+          <p>{fecha}</p>
+          <p>{hora}</p>
+          <button onClick={() => handlerDeleteToDo(id)} className={style.deleteTodo}>🗑</button>
         </div>
-        <p>{fecha}</p>
-        <p>{hora}</p>
-        <button onClick={() => handlerDeleteToDo(id)} className={style.deleteTodo}>🗑</button>
-      </div>
       <Modal isVisible={isVisible} isClosing={isClosing} onClose={onClose}>
         <h2>Editar Tarea</h2>
       </Modal>  

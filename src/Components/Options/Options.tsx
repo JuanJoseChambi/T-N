@@ -64,7 +64,7 @@ function Options() {
             
             <DatePicker
               showTimeSelect 
-              dateFormat={"dd-mm-yyyy"}
+              dateFormat={"dd-MM-yyyy"}
               locale={"es"}
               className={style["react-datepicker"]}
               selected={newToDo.date ? new Date(newToDo.date) : null}

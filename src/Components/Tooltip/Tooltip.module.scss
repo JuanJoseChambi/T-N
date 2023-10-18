@@ -1,0 +1,37 @@
+@import "../../Styles/mixins";
+@import "../../Styles/variables";
+
+.tooltipComponent{
+    position: relative;
+    display: flex;
+    // background-color: red;
+}
+.tooltip{
+    position: absolute;
+    top: 10px;
+    left: -85px;
+    z-index: 20;
+    width: auto;
+    padding: 3px 10px;
+    font-size: 13px;
+    font-weight:$ExtraLight ;
+    border-radius: 5px;
+    height: auto;
+    background-color: rgb(36, 36, 38);
+    border: 1px solid rgba(151, 149, 149, 0.669);
+    opacity: 0;
+    transition: opacity 0.6s;
+    i{
+        position: absolute;
+        top: 5.5px;
+        right: -13px;
+        font-size: 9px;
+    }
+}
+
+// .tooltipComponent:hover .tooltip {
+    // opacity: 1;
+// }
+.visibleTooltip{
+    opacity: 1;
+}
