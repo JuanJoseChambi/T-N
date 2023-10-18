@@ -9,7 +9,7 @@
   .TodoList {
     @include area(1300px, 560px);
     @include display(space-evenly,center, column);
-    // background-color: red;
+    // background-color: blue;
     .titleToDo{
       font-weight: $Thin;
       font-size: 80px;
@@ -19,7 +19,7 @@
     }
     .listToDos{
       @include display(space-evenly,center, row);
-      width: 90%;
+      width: 100%;
       // background-color: red;
     }
   }

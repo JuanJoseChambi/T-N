@@ -5,6 +5,7 @@ import { removeTodo, toggleTodo } from "../../Redux/Actions/Actions";
 import { useRef } from "react";
 import useFadeOnScroll from "../../Hooks/useFadeOnScroll";
 import { useFade } from "../../Hooks/useFade";
+import Modal from "../Modal/Modal";
 // import { useEffect } from "react";
 
 function ToDoItem({id, text, completed } : Todo) {
@@ -17,20 +18,26 @@ function ToDoItem({id, text, completed } : Todo) {
 
   useFadeOnScroll(ToDos, style.visibleToDos)
 
-  const { onClose, isClosing } = useFade()
+  const {isClosing, isVisible ,isOpen ,onClose } = useFade()
 
   function handlerDeleteToDo (id: string) {
     onClose()
     dispatch(removeTodo(id))
   }
   return (
-    <div key={id} className={`${style.itemTodo} ${isClosing? style.notVisibleItem : null}`} ref={ToDos}>
-      <button onClick={() => handlerCheckToDo(id)} className={style.checkTodo}> {completed ? <i className='bx bx-checkbox-checked' ></i> : <i className='bx bx-checkbox'></i>}</button>
-      <div className={style.containerText}>
-        <p className={`${completed ? style.textCompleted: style.incompleted}`}>{text}</p>
+    <>
+      <div key={id} className={`${style.itemTodo}`} onClick={isOpen} ref={ToDos}>
+        <button onClick={() => handlerCheckToDo(id)} className={style.checkTodo}> {completed ? <i className='bx bx-checkbox-checked' ></i> : <i className='bx bx-checkbox'></i>}</button>
+        <div className={style.containerText}>
+          <p className={`${completed ? style.textCompleted: style.incompleted}`}>{text}</p>
+        </div>
+        <button onClick={() => handlerDeleteToDo(id)} className={style.deleteTodo}>🗑</button>
       </div>
-      <button onClick={() => handlerDeleteToDo(id)} className={style.deleteTodo}>🗑</button>
-    </div>
+      <Modal isVisible={isVisible} isClosing={isClosing} onClose={onClose}>
+        <h2>Editar Tarea</h2>
+      </Modal>  
+    </>
+    
   )
 }
 

@@ -17,20 +17,15 @@ function Options() {
     const dispatch = useDispatch();
     const {isVisible, isClosing, isOpen, onClose} = useFade()
 
-    function hashId () {
+      function hashId () {
         const hash = (Math.random()*100).toString()
         return hash.toString()
       }
 
-      function handlerSendTodo () { /*e : React.FormEvent<HTMLFormElement>*/
-        // e.preventDefault();
-          
+      function handlerSendTodo () { 
         if (newToDo.id && newToDo.text)  {
           console.log("Tiene Id");
           dispatch(addTodo(newToDo)) 
-        //   if (inputRef.current) {
-            // inputRef.current.value = "";
-        //   }
         setNewToDo({
             id:"",
             text: "",
@@ -38,7 +33,6 @@ function Options() {
           })
         }else{
           console.log("No tiene Id");
-          
         }
       }
 
@@ -60,7 +54,6 @@ function Options() {
             <h2>Crear Tarea</h2>
             <p>{newToDo.text?"Presione Enter para Anadir Tarea":null}</p>
             <input type="text" placeholder="Tarea" onKeyDown={(e) => {e.key === "Enter" ? handlerSendNewToDo() : null}} onChange={(e) => setNewToDo({...newToDo, text:e.target.value, id: hashId()})}/>
-            {/* <input type="checkbox" /> */}
             <Button onClick={handlerSendNewToDo}>Crear To Do</Button>
             <b>{!newToDo.text? errors: null}</b>
         </Modal>
