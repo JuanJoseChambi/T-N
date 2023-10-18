@@ -5,12 +5,18 @@ import { useFade } from "../../Hooks/useFade";
 import Button from "../Button/Button";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../../Redux/Actions/Actions";
+import DatePicker, { registerLocale } from "react-datepicker"; // Importa react-datepicker
+import "react-datepicker/dist/react-datepicker.css"; // Importa el estilo CSS de react-datepicker
+import { Todo } from "../../Interfaces/interfaces";
+import es from "date-fns/locale/es";
+registerLocale("es", es)
 
 function Options() {
-    const [newToDo, setNewToDo] = useState({
+    const [newToDo, setNewToDo] = useState<Todo>({
         id:"",
         text: "",
-        completed:false
+        completed:false,
+        date: new Date()
     })
     const [errors, setErrors] = useState<string | null>(null)
     const divRef = useRef<HTMLDivElement | null>(null)
@@ -29,7 +35,8 @@ function Options() {
         setNewToDo({
             id:"",
             text: "",
-            completed: false
+            completed: false,
+            date: new Date()
           })
         }else{
           console.log("No tiene Id");
@@ -54,6 +61,16 @@ function Options() {
             <h2>Crear Tarea</h2>
             <p>{newToDo.text?"Presione Enter para Anadir Tarea":null}</p>
             <input type="text" placeholder="Tarea" onKeyDown={(e) => {e.key === "Enter" ? handlerSendNewToDo() : null}} onChange={(e) => setNewToDo({...newToDo, text:e.target.value, id: hashId()})}/>
+            
+            <DatePicker
+              showTimeSelect 
+              dateFormat={"dd-mm-yyyy"}
+              locale={"es"}
+              className={style["react-datepicker"]}
+              selected={newToDo.date ? new Date(newToDo.date) : null}
+              onChange={(date: Date | null ) => setNewToDo({ ...newToDo, date })}
+            />
+
             <Button onClick={handlerSendNewToDo}>Crear To Do</Button>
             <b>{!newToDo.text? errors: null}</b>
         </Modal>

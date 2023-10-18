@@ -3,6 +3,7 @@ export interface Todo {
     id:string
     text:string
     completed: boolean
+    date?: null | Date
 }
 export interface TodoState {
     todos: Todo[]

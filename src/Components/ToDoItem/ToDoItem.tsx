@@ -6,9 +6,19 @@ import { useRef } from "react";
 import useFadeOnScroll from "../../Hooks/useFadeOnScroll";
 import { useFade } from "../../Hooks/useFade";
 import Modal from "../Modal/Modal";
+import { useDate } from "../../Hooks/useDate";
 // import { useEffect } from "react";
 
-function ToDoItem({id, text, completed } : Todo) {
+function ToDoItem({id, text, completed, date } : Todo) {
+
+let fecha;
+let hora;
+if (date) {
+  const {fechaCompleta, horaCompleta} = useDate(date)
+  fecha = fechaCompleta;
+  hora = horaCompleta
+}  
+
   const ToDos = useRef<HTMLDivElement | null>(null)
   const dispatch = useDispatch();
 
@@ -31,6 +41,8 @@ function ToDoItem({id, text, completed } : Todo) {
         <div className={style.containerText}>
           <p className={`${completed ? style.textCompleted: style.incompleted}`}>{text}</p>
         </div>
+        <p>{fecha}</p>
+        <p>{hora}</p>
         <button onClick={() => handlerDeleteToDo(id)} className={style.deleteTodo}>🗑</button>
       </div>
       <Modal isVisible={isVisible} isClosing={isClosing} onClose={onClose}>
