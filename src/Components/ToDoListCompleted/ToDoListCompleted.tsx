@@ -16,6 +16,7 @@ function ToDoListCompleted() {
             id={todo.id}
             text={todo.text}
             completed={todo.completed}
+            date={todo.date? todo.date: null}
           />
         )): 
        ( <div className={style.notTodos}>

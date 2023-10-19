@@ -2,16 +2,10 @@ import style from "./ToDoList.module.scss";
 import { useSelector } from "react-redux";
 import { RootState } from "../../Interfaces/interfaces";
 import ToDoItem from "../ToDoItem/ToDoItem";
-// import { useEffect } from "react";
 
 function ToDoList() {
   const { todos } = useSelector((state: RootState) => state.todos);
   const todosOrder = [...todos].reverse().filter(todos => todos.completed === false);
-  // useEffect(() => {
-    // console.log(todosOrder[0]?.date);
-    
-  
-  // }, [todos])
   
   return (
     <div className={style.viewToDoList}>
