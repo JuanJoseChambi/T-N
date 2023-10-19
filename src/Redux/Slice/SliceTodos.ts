@@ -42,9 +42,23 @@ export const TodosSlice = createSlice({
             state.todosBackup = state.todosBackup.filter(notes => notes.id !== id)
             saveTodosToLocalStorage( state.todosBackup)
         },
+        upDate: (state, action) => {
+            const id = action.payload;
+            const update = action.payload
+            let upDateNoteBackUp = state.todosBackup.find(todos => todos.id === id)
+            let upDateNote = state.todos.find(todos => todos.id === id)
+            if (upDateNote && upDateNoteBackUp) {
+                upDateNote = update
+                upDateNoteBackUp = update
+            }
+        },
         searchTodo: (state, action) => {
             const wanted = action.payload;
-            state.todos = state.todosBackup.filter(todo => todo.text.includes(wanted))
+            state.todos = state.todosBackup.filter((todo) => {
+                const textMatch = todo.text && todo.text.toLowerCase().includes(wanted.toLowerCase());
+                const titleMatch = todo.title && todo.title.toLowerCase().includes(wanted.toLowerCase());
+                return textMatch || titleMatch;
+            });
         },
         resetTodos: (state) => {
             state.todos = state.todosBackup

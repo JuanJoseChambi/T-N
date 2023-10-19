@@ -7,6 +7,9 @@ function ToDoList() {
   const { todos } = useSelector((state: RootState) => state.todos);
   const todosOrder = [...todos].reverse().filter(todos => todos.completed === false);
   
+  console.log(todosOrder);
+  
+
   return (
     <div className={style.viewToDoList}>
       <p className={style.titleToDoList}>Tareas Incompletas</p>

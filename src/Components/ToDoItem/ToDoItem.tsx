@@ -43,10 +43,10 @@ if (date) {
           <div className={style.date}>{fecha}</div>
           <button onClick={() => handlerDeleteToDo(id)} className={style.deleteTodo}>🗑</button>
         </div>
-      <Modal styles={style.newModal} isVisible={isVisible} isClosing={isClosing} onClose={onClose}>
+      <Modal styles={title ? style.noteEdit : style.todoEdit} isVisible={isVisible} isClosing={isClosing} onClose={onClose}>
         <h2>Editar Tarea</h2>
         <div className={style.containerInputs}>
-          <input type="text" value={title}/>
+          <input type="text" placeholder={title ? title : text}/>
           {title ? <textarea>{text}</textarea> : null}
         </div>
         <Button onClick={onClose}>Editar Tarea</Button>
