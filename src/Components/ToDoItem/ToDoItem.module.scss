@@ -2,26 +2,28 @@
 @import "../../Styles/variables";
 
 .itemTodo {
-  @include display(space-between, start, row);
+  @include display(space-between, center, row);
   width: 90%;
   margin: 10px 0;
   background-color: rgb(25, 24, 24);
   position: relative;
   border-radius: 10px;
   box-shadow: 10px 10px 15px 0 black;
+  padding: 10px;
   cursor: pointer;
   overflow-y: auto;
   overflow-x: hidden;
   opacity: 0;
   transition: opacity .8s;
   .checkTodo {
+    @include display;
+    text-align: center;
     margin: 0 10px;
     background-color: transparent;
     position: sticky;
-    top: 8px;
+    top: 1px;
     cursor: pointer;
     font-size: 24px;
-    font-weight: $Thin;
     color: white;
   }
   .containerText {
@@ -30,7 +32,7 @@
     max-height: 200px;
     position: relative;
     padding: none;
-    margin: 10px 0;
+    margin: 5px 0;
     .textCompleted, .incompleted {
         color: white;
     }
@@ -42,7 +44,15 @@
       font-weight: $Thin;
     }
   }
-
+  .date{
+    width: 70%;
+    text-align: center;
+    font-size: 10px;
+    font-weight: $ExtraLight;
+    position: absolute;
+    top: 0px;
+    right: 50px;
+  }
   .deleteTodo {
     margin: 0px 10px;
     background-color: transparent;
@@ -65,7 +75,6 @@
 .itemTodo::-webkit-scrollbar-thumb {
   background-color: #ccc9cc;
   border-radius: 50px;
-  // border: 1px solid rgb(255, 0, 255);
 }
 .notVisibleItem{
   opacity: 0;

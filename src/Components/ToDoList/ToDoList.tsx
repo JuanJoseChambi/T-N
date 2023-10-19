@@ -18,13 +18,13 @@ function ToDoList() {
       <p className={style.titleToDoList}>Tareas Incompletas</p>
       <div className={style.containerTodos}>
         {todosOrder.length > 0 ? todosOrder.map((todo) => (
-          <ToDoItem
-            key={todo.id}
-            id={todo.id}
-            text={todo.text}
-            completed={todo.completed}
-            date={todo.date? todo.date: null}
-          />
+            <ToDoItem
+              key={todo.id}
+              id={todo.id}
+              text={todo.text}
+              completed={todo.completed}
+              date={todo.date? todo.date: null}
+            />
         )): 
        ( <div className={style.notTodos}>
           <p>No Hay Tareas Incompletas</p>

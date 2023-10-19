@@ -21,15 +21,22 @@
   //   color: rgb(255, 253, 253);
   // }
 }
-.calendar{
+.calendario{
   font-family: Arial, sans-serif;
-  background-color: #e91b1b;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  margin: 0;
 }
 
-.react-datepicker__calendar-container {
-  border: 1px solid #1b1a1a;
+.calen{
+  background-color: black;
+  color: red;
 }
-
+.tiempo{
+  background-color: black;
+  color: red;
+}
 
 // .divActive{
     // clip-path: circle(100%);

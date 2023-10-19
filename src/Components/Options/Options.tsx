@@ -55,7 +55,7 @@ function Options() {
   return (
     <>
         <div className={`${style.optionsComponent}`} ref={divRef} >
-            <Button onClick={isOpen}>Create To Do</Button>
+            <Button onClick={isOpen}>Crear Tarea</Button>
         </div>
         <Modal isVisible={isVisible} isClosing={isClosing} onClose={onClose}>
             <h2>Crear Tarea</h2>
@@ -63,15 +63,24 @@ function Options() {
             <input type="text" placeholder="Tarea" onKeyDown={(e) => {e.key === "Enter" ? handlerSendNewToDo() : null}} onChange={(e) => setNewToDo({...newToDo, text:e.target.value, id: hashId()})}/>
             
             <DatePicker
-              showTimeSelect 
+              wrapperClassName={style.calendario}
+              calendarClassName={style.calen}
+              // withPortal={true}
+              // inline={true}
+              // todayButton={React.ReactNode}
+              // customInput={<p>Holaa</p>}
+              // todayButton={<p>Holllllaaa</p>}
+              // clearButtonTitle={"Holaaaaa"}
+
+              showTimeSelect={true}
+              // popperPlacement={"right-end"}
               dateFormat={"dd-MM-yyyy"}
               locale={"es"}
-              className={style["react-datepicker"]}
+              className={style.calendario}
               selected={newToDo.date ? new Date(newToDo.date) : null}
               onChange={(date: Date | null ) => setNewToDo({ ...newToDo, date })}
             />
-
-            <Button onClick={handlerSendNewToDo}>Crear To Do</Button>
+            <Button onClick={handlerSendNewToDo}>Crear Tarea</Button>
             <b>{!newToDo.text? errors: null}</b>
         </Modal>
     </>

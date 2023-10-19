@@ -4,7 +4,6 @@ import SearchBar from "../../Components/SearchBar/SearchBar";
 import style from "./ToDo.module.scss";
 import ToDoListCompleted from "../../Components/ToDoListCompleted/ToDoListCompleted";
 import Options from "../../Components/Options/Options";
-import Tooltip from "../../Components/Tooltip/Tooltip";
 
 function ToDo() {
   return (
@@ -14,9 +13,7 @@ function ToDo() {
         <SearchBar/>
         <div className={style.listToDos}>
           <Options/>
-          <Tooltip text="Tareas">
-            <ToDoList />
-          </Tooltip>
+          <ToDoList />
           <ToDoListCompleted/>
         </div>
       </div>

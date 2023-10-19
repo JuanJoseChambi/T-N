@@ -39,8 +39,7 @@ if (date) {
           <div className={style.containerText}>
             <p className={`${completed ? style.textCompleted: style.incompleted}`}>{text}</p>
           </div>
-          <p>{fecha}</p>
-          <p>{hora}</p>
+          <div className={style.date}>{fecha}</div>
           <button onClick={() => handlerDeleteToDo(id)} className={style.deleteTodo}>🗑</button>
         </div>
       <Modal isVisible={isVisible} isClosing={isClosing} onClose={onClose}>
