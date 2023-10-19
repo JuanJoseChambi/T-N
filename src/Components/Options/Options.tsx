@@ -5,9 +5,9 @@ import Modal from "../Modal/Modal";
 import Button from "../Button/Button";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../../Redux/Actions/Actions";
+import { Todo } from "../../Interfaces/interfaces";
 import DatePicker, { registerLocale } from "react-datepicker"; // Importa react-datepicker
 import "react-datepicker/dist/react-datepicker.css"; // Importa el estilo CSS de react-datepicker
-import { Todo } from "../../Interfaces/interfaces";
 import es from "date-fns/locale/es";
 registerLocale("es", es)
 

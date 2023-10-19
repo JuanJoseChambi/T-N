@@ -42,14 +42,19 @@ export const TodosSlice = createSlice({
             state.todosBackup = state.todosBackup.filter(notes => notes.id !== id)
             saveTodosToLocalStorage( state.todosBackup)
         },
-        upDate: (state, action) => {
-            const id = action.payload;
-            const update = action.payload
-            let upDateNoteBackUp = state.todosBackup.find(todos => todos.id === id)
-            let upDateNote = state.todos.find(todos => todos.id === id)
+        upDateNoteTodo: (state, action) => {
+            const update = action.payload;
+            let upDateNoteBackUp = state.todosBackup.find(todos => todos.id === update.id)
+            let upDateNote = state.todos.find(todos => todos.id === update.id)
             if (upDateNote && upDateNoteBackUp) {
-                upDateNote = update
-                upDateNoteBackUp = update
+                update.text ? upDateNote.text = update.text : null;
+                update.title ? upDateNote.title = update.title : null;
+                update.date ? upDateNote.date = update.date : null;
+                
+                update.text ? upDateNoteBackUp.text = update.text: null;
+                update.title ? upDateNoteBackUp.title = update.title: null;
+                update.date ? upDateNoteBackUp.date = update.date: null;
+                saveTodosToLocalStorage( state.todosBackup)
             }
         },
         searchTodo: (state, action) => {
@@ -66,5 +71,5 @@ export const TodosSlice = createSlice({
 
     }
 })
-export const { addTodo, toggleTodo, removeTodo, searchTodo, resetTodos } = TodosSlice.actions
+export const { addTodo, toggleTodo, removeTodo, searchTodo, resetTodos, upDateNoteTodo} = TodosSlice.actions
 export default TodosSlice.reducer
