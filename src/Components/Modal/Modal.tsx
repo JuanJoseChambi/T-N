@@ -7,15 +7,15 @@ function Modal({styles: propStyle = "", isVisible, isClosing, onClose, children 
     return null;
   }
   useEffect(() => {
-    // Código para ejecutar cuando isVisible cambie
   }, [isVisible]);
 
   const modalStyles = propStyle || style.modal;
+  
 
   return (
     <div className={`${style.modalComponent} ${isClosing ? style.notVisibleModal : null} ${isVisible ? style.visibleModal : null} `}>
       <button className={style.btnCloseModal} onClick={onClose}><i className='bx bx-x-circle'></i></button>
-      <section className={modalStyles}>
+      <section className={`${modalStyles} ${style.notStyle}`}>
         {children}
       </section>
     </div>

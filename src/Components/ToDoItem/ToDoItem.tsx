@@ -9,7 +9,7 @@ import Modal from "../Modal/Modal";
 import { useDate } from "../../Hooks/useDate";
 import Button from "../Button/Button";
 
-function ToDoItem({id, text, completed, date } : Todo) {
+function ToDoItem({id, title, text, completed, date } : Todo) {
 
 let fecha;
 let hora;
@@ -32,7 +32,7 @@ if (date) {
     onClose()
     dispatch(removeTodo(id))
   }
-  return (
+  return ( 
     <>
         <div key={id} className={`${style.itemTodo}`} onClick={isOpen} ref={ToDos}>
           <button onClick={() => handlerCheckToDo(id)} className={style.checkTodo}> {completed ? <i className='bx bx-checkbox-checked' ></i> : <i className='bx bx-checkbox'></i>}</button>
@@ -44,8 +44,9 @@ if (date) {
         </div>
       <Modal styles={style.newModal} isVisible={isVisible} isClosing={isClosing} onClose={onClose}>
         <h2>Editar Tarea</h2>
-        <textarea ></textarea>
-        <Button onClick={onClose}>Editar</Button>
+        <input type="text"  placeholder={title ? title : text}/>
+        {title ? <textarea>{text}</textarea> : null}
+        <Button onClick={onClose}>Editar Tarea</Button>
       </Modal>  
     </>
     

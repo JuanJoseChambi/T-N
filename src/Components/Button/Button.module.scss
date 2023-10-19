@@ -3,16 +3,17 @@
 
 .btnComponent{
     display: block;
-    padding: 8px 10px;
+    padding: 8px 7px;
     font-size: 14px;
     font-weight: $Thin;
     border: 1px solid white;
     background-color: black;
+    // background-color: red;
     border-radius: 10px;
     color: white;
-    transition: transform .3s;
+    transition: transform .3s, padding .5s;
     &:hover{
-        transform: translate(0px, 5px);
-
+        // transform: scale(1.05);
+        padding: 8px 25px;
     }
 }

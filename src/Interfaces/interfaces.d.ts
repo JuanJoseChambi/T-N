@@ -8,6 +8,7 @@ export interface Children {
 // --------------------------------
 export interface Todo {
     id:string
+    title: string
     text:string
     completed: boolean
     date?: null | Date
@@ -21,7 +22,6 @@ export interface RootState {
 }
 // --------------------------------
 
-
 // --------------------------------
 export interface PropsUseFade  {
     isOpen: () => void;
@@ -30,8 +30,8 @@ export interface PropsUseFade  {
     isClosing: boolean;
 }
 export interface modalProps extends Omit<PropsUseFade, 'isOpen'>  {
-    children: JSX.Element[] | JSX.Element
-    styles?: string
+    children: (null | JSX.Element)[] 
+    styles?: string;
 };
 // --------------------------------
 

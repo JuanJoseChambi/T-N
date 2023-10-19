@@ -14,6 +14,7 @@ function ToDoListCompleted() {
           <ToDoItem
             key={todo.id}
             id={todo.id}
+            title={todo.title}
             text={todo.text}
             completed={todo.completed}
             date={todo.date? todo.date: null}

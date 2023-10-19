@@ -3,11 +3,12 @@
 
 .optionsComponent {
   @include display(center,center, column);
-  @include area(120px, 50px);
+  @include area(150px, 50px);
   color: black;
-  // background-color: red;
-
-
+  // background-color: blue;
+  button{
+    margin: 10px 0;
+  }
 
   // transition: clip-path .5s, background-color .5s;
   // background-color: transparent;
@@ -26,7 +27,6 @@
   width: 100%;
   position: relative;
   text-align: center;
-  margin: 0;
 }
 
 .calen{
