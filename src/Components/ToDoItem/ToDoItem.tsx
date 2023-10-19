@@ -7,7 +7,7 @@ import useFadeOnScroll from "../../Hooks/useFadeOnScroll";
 import { useFade } from "../../Hooks/useFade";
 import Modal from "../Modal/Modal";
 import { useDate } from "../../Hooks/useDate";
-// import { useEffect } from "react";
+import Button from "../Button/Button";
 
 function ToDoItem({id, text, completed, date } : Todo) {
 
@@ -42,8 +42,10 @@ if (date) {
           <div className={style.date}>{fecha}</div>
           <button onClick={() => handlerDeleteToDo(id)} className={style.deleteTodo}>🗑</button>
         </div>
-      <Modal isVisible={isVisible} isClosing={isClosing} onClose={onClose}>
+      <Modal styles={style.newModal} isVisible={isVisible} isClosing={isClosing} onClose={onClose}>
         <h2>Editar Tarea</h2>
+        <textarea ></textarea>
+        <Button onClick={onClose}>Editar</Button>
       </Modal>  
     </>
     

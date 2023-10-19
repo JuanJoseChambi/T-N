@@ -80,3 +80,9 @@
   opacity: 0;
   background-color: red;
 }
+.newModal{
+  @include modal();
+  h2{
+    background-color: red;
+  }
+}

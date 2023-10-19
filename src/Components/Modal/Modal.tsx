@@ -2,19 +2,20 @@ import { useEffect } from "react";
 import { modalProps } from "../../Interfaces/interfaces";
 import style from "./Modal.module.scss";
 
-function Modal({ isVisible, isClosing, onClose, children }: modalProps) {
+function Modal({styles: propStyle = "", isVisible, isClosing, onClose, children }: modalProps) {
   if (!isVisible) {
     return null;
   }
   useEffect(() => {
-    
-  
-  }, [isVisible])
+    // Código para ejecutar cuando isVisible cambie
+  }, [isVisible]);
+
+  const modalStyles = propStyle || style.modal;
 
   return (
     <div className={`${style.modalComponent} ${isClosing ? style.notVisibleModal : null} ${isVisible ? style.visibleModal : null} `}>
       <button className={style.btnCloseModal} onClick={onClose}><i className='bx bx-x-circle'></i></button>
-      <section className={style.modal}>
+      <section className={modalStyles}>
         {children}
       </section>
     </div>

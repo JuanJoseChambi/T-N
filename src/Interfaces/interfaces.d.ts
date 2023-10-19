@@ -31,6 +31,7 @@ export interface PropsUseFade  {
 }
 export interface modalProps extends Omit<PropsUseFade, 'isOpen'>  {
     children: JSX.Element[] | JSX.Element
+    styles?: string
 };
 // --------------------------------
 
