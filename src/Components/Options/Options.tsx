@@ -1,7 +1,7 @@
 import { useRef, useState  } from "react";
 import style from "./Options.module.scss";
 import Modal from "../Modal/Modal";
-import { useFade } from "../../Hooks/useFade";
+// import { useFade } from "../../Hooks/useFade";
 import Button from "../Button/Button";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../../Redux/Actions/Actions";
@@ -26,10 +26,8 @@ function Options() {
     const [isVisibleCreateNote, setIsVisibleCreateNote] = useState(false)
 
     function handlerOpenCreateTodo () {setIsVisibleCreateTodo(true)}
-    function handlerCloseCreateTodo () {setIsVisibleCreateTodo(false)}
     
     function handlerOpenCreateNote () {setIsVisibleCreateNote(true)}
-    function handlerCloseCreateNote () {setIsVisibleCreateNote(false)}
     // const {isVisible, isClosing, isOpen, onClose} = useFade()
 
       function hashId () {
@@ -41,7 +39,10 @@ function Options() {
         if (newToDo.id && newToDo.text)  {
           console.log("Tiene Id");
           dispatch(addTodo(newToDo)) 
-        setNewToDo({
+          setIsVisibleCreateNote(false)
+          setIsVisibleCreateTodo(false)
+          setErrors(null)
+          setNewToDo({
             id:"",
             title:"",
             text: "",
@@ -53,40 +54,46 @@ function Options() {
         }
       }
 
-      function handlerSendNewToDo () {
-        if (newToDo.text) {
-          handlerSendTodo()
-          // onClose()
-          setErrors(null)
-        }else{
-          setErrors("Escriba la Tarea")
-        }
-      }
   return (
     <>
         <div className={`${style.optionsComponent}`} ref={divRef} >
             <Button onClick={handlerOpenCreateTodo}>Crear Tarea</Button>
             <Button onClick={handlerOpenCreateNote}>Crear Nota</Button>
         </div>
-        <Modal isVisible={isVisibleCreateTodo} isClosing={!isVisibleCreateTodo} onClose={handlerCloseCreateTodo}>
+        <Modal isVisible={isVisibleCreateTodo} isClosing={!isVisibleCreateTodo} onClose={() => setIsVisibleCreateTodo(false)}>
             <h2>Crear Tarea</h2>
             <p>{newToDo.text?"Presione Enter para Anadir Tarea":null}</p>
-            <input type="text" placeholder="Tarea" onKeyDown={(e) => {e.key === "Enter" ? handlerSendNewToDo() : null}} onChange={(e) => setNewToDo({...newToDo, text:e.target.value, id: hashId()})}/>
+            <input type="text" placeholder="Tarea" onKeyDown={(e) => {e.key === "Enter" ? handlerSendTodo() : null}} onChange={(e) => setNewToDo({...newToDo, text:e.target.value, id: hashId()})}/>
             <DatePicker wrapperClassName={style.calendario} showTimeSelect={true} dateFormat={"dd-MM-yyyy"} locale={"es"} className={style.calendario} selected={newToDo.date ? new Date(newToDo.date) : null} onChange={(date: Date | null ) => setNewToDo({ ...newToDo, date })}/>
-            <Button onClick={handlerSendNewToDo}>Crear Tarea</Button>
+            <Button onClick={handlerSendTodo}>Crear Tarea</Button>
             <b>{!newToDo.text? errors: null}</b>
         </Modal>
-        <Modal isVisible={isVisibleCreateNote} isClosing={!isVisibleCreateNote} onClose={handlerCloseCreateNote}>
+        <Modal isVisible={isVisibleCreateNote} isClosing={!isVisibleCreateNote} onClose={() => setIsVisibleCreateNote(false)}>
           <h2>Crear Nota</h2>
-          <input type="text" placeholder="Titulo"/>
-          <textarea placeholder="Texto de la Nota"></textarea>
-          <Button onClick={handlerCloseCreateNote}>Crear Nota</Button>
+          <input type="text" placeholder="Titulo" onKeyDown={(e) => {e.key === "Enter" ? handlerSendTodo() : null}} onChange={(e) => setNewToDo({...newToDo, title: e.target.value, id: hashId()})}/>
+          <textarea placeholder="Nota" onChange={(e) => setNewToDo({...newToDo, text: e.target.value})}></textarea>
+          <DatePicker wrapperClassName={style.calendario} showTimeSelect={true} dateFormat={"dd-MM-yyyy"} locale={"es"} className={style.calendario} selected={newToDo.date ? new Date(newToDo.date) : null} onChange={(date: Date | null ) => setNewToDo({ ...newToDo, date })}/>
+          <Button onClick={handlerSendTodo}>Crear Nota</Button>
         </Modal>
     </>
   )
 }
 
 export default Options
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 {/* <button className={style.btn} onClick={() => setDivClicked(!divClicked)}><i className='bx bxs-chevrons-down'></i></button> */}

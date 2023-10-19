@@ -68,8 +68,12 @@
   }
   .notStyle textarea {
     border-radius: 5px;
+    resize: vertical;
+    min-height: 50px;
+    max-height: 90px;
     padding: 7px 8px;
     font-size: 13px;
+    font-weight: $ExtraLight;
     border-bottom: 1px solid white;
     background-color: transparent;
     color: white;
@@ -121,13 +125,30 @@
     }
   }
   .modal textarea {
+    width: 50%;
+    resize: vertical;
+    min-height: 50px;
+    max-height: 90px;
+    font-weight: $ExtraLight;
     border-radius: 5px;
     padding: 7px 8px;
     font-size: 13px;
-    border-bottom: 1px solid white;
+    border: 1px solid #c3bfbf;
     background-color: transparent;
     color: white;
     margin: 5px 0;
+    &:hover {
+      border: 1px solid white;
+    }
+  }
+  .modal textarea::-webkit-scrollbar {
+    width: 4px;
+    background-color: #0E0D0D;
+    transition: background-color .5s;
+  }
+  .modal textarea::-webkit-scrollbar-thumb {
+    background-color: #ccc9cc;
+    border-radius: 50px;
   }
 }
 

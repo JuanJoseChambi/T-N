@@ -14,8 +14,8 @@ function ToDoItem({id, title, text, completed, date } : Todo) {
 let fecha;
 let hora;
 if (date) {
-  const {fechaCompleta, horaCompleta} = useDate(date)
-  fecha = fechaCompleta;
+  const { dia, mes, horaCompleta} = useDate(date)
+  fecha = `${dia}/${mes}`;
   hora = horaCompleta
 }  
 
@@ -37,6 +37,7 @@ if (date) {
         <div key={id} className={`${style.itemTodo}`} onClick={isOpen} ref={ToDos}>
           <button onClick={() => handlerCheckToDo(id)} className={style.checkTodo}> {completed ? <i className='bx bx-checkbox-checked' ></i> : <i className='bx bx-checkbox'></i>}</button>
           <div className={style.containerText}>
+            {title ? <h3 className={style.titleNote}>{title}</h3>:null}
             <p className={`${completed ? style.textCompleted: style.incompleted}`}>{text}</p>
           </div>
           <div className={style.date}>{fecha}</div>
@@ -44,8 +45,10 @@ if (date) {
         </div>
       <Modal styles={style.newModal} isVisible={isVisible} isClosing={isClosing} onClose={onClose}>
         <h2>Editar Tarea</h2>
-        <input type="text"  placeholder={title ? title : text}/>
-        {title ? <textarea>{text}</textarea> : null}
+        <div className={style.containerInputs}>
+          <input type="text" value={title}/>
+          {title ? <textarea>{text}</textarea> : null}
+        </div>
         <Button onClick={onClose}>Editar Tarea</Button>
       </Modal>  
     </>
