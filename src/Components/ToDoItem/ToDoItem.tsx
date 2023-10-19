@@ -67,7 +67,9 @@ if (date) {
           <input type="text" placeholder={title ? title : text} onChange={(e) => {title ? setUpDate({...upDate, title: e.target.value}): setUpDate({...upDate, text:e.target.value})}}/>
           {title ? <textarea onChange={(e) => setUpDate({...upDate, text:e.target.value})}>{text}</textarea> : null}
         </div>
-        <DatePicker wrapperClassName={style.calendario} showTimeSelect={true} dateFormat={"dd-MM-yyyy"} locale={"es"} className={style.calendario} selected={upDate.date ? new Date(upDate.date) : null} onChange={(date: Date | null ) => setUpDate({ ...upDate, date })}/>
+        <div className={style.date}>
+          <DatePicker popperPlacement="right" wrapperClassName={style.calendario} showTimeSelect={true} dateFormat={"dd-MM-yyyy"} locale={"es"} className={style.calendario} selected={upDate.date ? new Date(upDate.date) : null} onChange={(date: Date | null ) => setUpDate({ ...upDate, date })}/>
+        </div>
         <Button onClick={handlerUpDate}>Editar Tarea</Button>
       </Modal>  
     </>

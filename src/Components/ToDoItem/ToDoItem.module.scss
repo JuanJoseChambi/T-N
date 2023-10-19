@@ -95,7 +95,7 @@
   }
   .containerInputs{
     width: 100%;
-    min-height: 200px;
+    min-height: 170px;
     // background-color: red;
     @include display(center, start, column);
     textarea{
@@ -114,6 +114,19 @@
     input{
       margin: 10px 0;
     }
+  }
+  button{
+    // background-color: red;
+    margin: 10px 0;
+  }
+  .date{
+    width: 100%;
+    min-height: 10px;
+    // background-color: blue;
+  }
+  .calendario{
+    width: 37%;
+    // background-color: red
   }
 }
 .todoEdit{
