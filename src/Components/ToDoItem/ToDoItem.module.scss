@@ -93,6 +93,18 @@
     width: 100%;
     text-align: start;
   }
+  .hour{
+    // background-color: red;
+    position: absolute;
+    top: -14px;
+    right: 10px;
+    border-radius: 10px;
+    width: auto;
+    padding: 5px 8px;
+    min-height: 17px;
+    background-color: #191818;
+    border: 1px solid #808080;
+  }
   .containerInputs{
     width: 100%;
     min-height: 170px;
@@ -125,10 +137,22 @@
     // background-color: blue;
   }
   .calendario{
-    width: 37%;
+    width: 36%;
     // background-color: red
   }
 }
 .todoEdit{
   @include display(space-evenly,center, column);
+  .hour{
+    // background-color: red;
+    position: absolute;
+    top: -14px;
+    right: 10px;
+    border-radius: 10px;
+    width: auto;
+    padding: 5px 8px;
+    min-height: 17px;
+    background-color: #191818;
+    border: 1px solid #808080;
+  }
 }

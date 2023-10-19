@@ -45,7 +45,7 @@ if (date) {
     dispatch(removeTodo(id))
   }
 
-  function handlerUpDate () {
+  function handlerUpDate (): void{
     dispatch(upDateNoteTodo(upDate))
     onClose()
   }
@@ -63,6 +63,7 @@ if (date) {
         </div>
       <Modal styles={title ? style.noteEdit : style.todoEdit} isVisible={isVisible} isClosing={isClosing} onClose={onClose}>
         <h2>Editar {title? "Nota" : "Tarea"}</h2>
+        <p className={style.hour}>{hora} hs</p>
         <div className={style.containerInputs}>
           <input type="text" placeholder={title ? title : text} onChange={(e) => {title ? setUpDate({...upDate, title: e.target.value}): setUpDate({...upDate, text:e.target.value})}}/>
           {title ? <textarea onChange={(e) => setUpDate({...upDate, text:e.target.value})}>{text}</textarea> : null}

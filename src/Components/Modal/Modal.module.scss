@@ -34,6 +34,7 @@
     border-radius: 10px;
     padding: 10px;
     border: 1px solid gray;
+    position: relative;
     @include shadow(10px, 15px, 15px, 0, rgb(29, 29, 29));
     // background-color: red;
 
@@ -81,6 +82,7 @@
   }
   .modal {
     @include display(space-evenly, center, column);
+    position: relative;
     width: 500px;
     height: 300px;
     background-color: rgb(25, 24, 24);
