@@ -67,9 +67,15 @@ export const TodosSlice = createSlice({
         },
         resetTodos: (state) => {
             state.todos = state.todosBackup
+        },
+        filterToDos: (state) => {
+            state.todos = state.todosBackup.filter(todos => !todos.title)
+        },
+        filterNotes: (state) => {
+            state.todos = state.todosBackup.filter(todos => todos.title)
         }
 
     }
 })
-export const { addTodo, toggleTodo, removeTodo, searchTodo, resetTodos, upDateNoteTodo} = TodosSlice.actions
+export const { addTodo, toggleTodo, removeTodo, searchTodo, resetTodos, upDateNoteTodo, filterToDos, filterNotes} = TodosSlice.actions
 export default TodosSlice.reducer

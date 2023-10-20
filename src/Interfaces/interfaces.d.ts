@@ -48,3 +48,7 @@ export interface TooltipProp extends Children {
     text: string
 }
 // --------------------------------
+
+export interface OptionsAcordeonProps extends Children {
+    icon: string
+}

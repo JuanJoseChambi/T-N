@@ -7,3 +7,6 @@ export const removeTodo = createAction<string>("todos/removeTodo")
 export const upDateNoteTodo = createAction<Todo>("todos/upDateNoteTodo")
 export const searchTodo = createAction<string>("todos/searchTodo")
 export const resetTodos = createAction<void>("todos/resetTodos")
+export const filterToDos = createAction<void>("todos/filterToDos")
+export const filterNotes = createAction<void>("todos/filterNotes")
+

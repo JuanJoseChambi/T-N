@@ -79,6 +79,10 @@
     background-color: transparent;
     color: white;
     // margin: 5px 0;
+    transition: border 0.5s;
+    &:hover {
+      border: 1px solid white;
+    }
   }
   .modal {
     @include display(space-evenly, center, column);

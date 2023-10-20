@@ -1,0 +1,48 @@
+@import "../../Styles/mixins";
+@import "../../Styles/variables";
+.optionsAcordeonComponent {
+  @include display(start, start, column);
+  // background-color: red;
+  position: relative;
+  z-index: 100;
+  .icon {
+    // background-color: red;
+    margin: 0px 10px;
+    font-size: 23px;
+  }
+  .options {
+    @include display(center, center, column);
+    border-radius: 10px 10px 10px 10px;
+    min-width: 125px;
+    min-height: 10px;
+    padding: 7px 0;
+    font-size: 13px;
+    background-color: #191818;
+    color: white;
+    border: 1px solid #d6d5d5;
+    position: absolute;
+    top: 43px;
+    left: -41px;
+    button {
+      color: white;
+      font-weight: $ExtraLight;
+      font-size: 13px;
+      background-color: transparent;
+      border-radius: 5px;
+      //   margin: 3px 0;
+      padding: 3px 5px;
+      transition: background-color 0.5s;
+      &:hover {
+        background-color: #80808044;
+      }
+      &:active{
+        background-color: #ffffff94;
+      }
+    }
+    i {
+      // background-color: red;
+      position: absolute;
+      top: -18px;
+    }
+  }
+}

@@ -55,7 +55,7 @@ if (date) {
         <div key={id} className={`${style.itemTodo}`} onClick={isOpen} ref={ToDos}>
           <button onClick={() => handlerCheckToDo(id)} className={style.checkTodo}> {completed ? <i className='bx bx-checkbox-checked' ></i> : <i className='bx bx-checkbox'></i>}</button>
           <div className={style.containerText}>
-            {title ? <h3 className={style.titleNote}>{title}</h3>:null}
+            {title ? <h3 className={`${completed ? style.titleNoteComplete : style.titleNoteIncomplete}`}>{title}</h3>:null}
             <p className={`${completed ? style.textCompleted: style.incompleted}`}>{text}</p>
           </div>
           <div className={style.date}>{fecha}</div>
@@ -65,7 +65,7 @@ if (date) {
         <h2>Editar {title? "Nota" : "Tarea"}</h2>
         <p className={style.hour}>{hora} hs</p>
         <div className={style.containerInputs}>
-          <input type="text" placeholder={title ? title : text} onChange={(e) => {title ? setUpDate({...upDate, title: e.target.value}): setUpDate({...upDate, text:e.target.value})}}/>
+          <input type="text" className={completed ? style.textCompleted: style.incompleted} placeholder={title ? title : text} onChange={(e) => {title ? setUpDate({...upDate, title: e.target.value}): setUpDate({...upDate, text:e.target.value})}}/>
           {title ? <textarea onChange={(e) => setUpDate({...upDate, text:e.target.value})}>{text}</textarea> : null}
         </div>
         <div className={style.date}>

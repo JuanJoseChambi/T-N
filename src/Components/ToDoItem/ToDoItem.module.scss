@@ -33,9 +33,12 @@
     position: relative;
     padding: none;
     margin: 5px 0;
-    .titleNote{
+    .titleNoteIncomplete, .titleNoteComplete{
       margin: 0 0 10px 0;
       // background-color: red;
+    }
+    .titleNoteComplete{
+      text-decoration: line-through;
     }
     .textCompleted, .incompleted {
         color: white;
@@ -43,6 +46,7 @@
     .textCompleted {
       text-decoration: line-through;
       font-weight: $ExtraLight;
+      // background-color: red;
     }
     .incompleted {
       font-weight: $Thin;

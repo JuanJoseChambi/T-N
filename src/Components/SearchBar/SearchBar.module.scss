@@ -3,7 +3,9 @@
 .searchComponentDiv{
   @include display(center, center, row);
   width: 100%;
-  // background-color: red
+  max-height: 30px;
+  // background-color: blue;
+  position: relative;
 }
 .searchComponent {
   @include area(30%, auto);
