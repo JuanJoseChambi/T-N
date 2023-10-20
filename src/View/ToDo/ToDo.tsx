@@ -9,7 +9,7 @@ function ToDo() {
   return (
     <div className={style.viewToDo}>
       <div className={style.TodoList}>
-        <h1 className={style.titleToDo}>Lista de Tareas</h1>
+        <h1 className={style.titleToDo}>Tareas / Notas</h1>
         <SearchBar/>
         <div className={style.listToDos}>
           <Options/>

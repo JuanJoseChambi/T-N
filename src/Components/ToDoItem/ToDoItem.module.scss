@@ -14,7 +14,7 @@
   overflow-y: auto;
   overflow-x: hidden;
   opacity: 0;
-  transition: opacity .8s;
+  transition: opacity 0.8s;
   .checkTodo {
     @include display;
     text-align: center;
@@ -33,15 +33,17 @@
     position: relative;
     padding: none;
     margin: 5px 0;
-    .titleNoteIncomplete, .titleNoteComplete{
+    .titleNoteIncomplete,
+    .titleNoteComplete {
       margin: 0 0 10px 0;
       // background-color: red;
     }
-    .titleNoteComplete{
+    .titleNoteComplete {
       text-decoration: line-through;
     }
-    .textCompleted, .incompleted {
-        color: white;
+    .textCompleted,
+    .incompleted {
+      color: white;
     }
     .textCompleted {
       text-decoration: line-through;
@@ -52,7 +54,7 @@
       font-weight: $Thin;
     }
   }
-  .date{
+  .date {
     // width: 70%;
     text-align: center;
     font-size: 10px;
@@ -73,35 +75,34 @@
   }
 }
 
-.visibleToDos{
+.visibleToDos {
   opacity: 1;
 }
 .itemTodo::-webkit-scrollbar {
   width: 4px;
-  background-color: #0E0D0D;
-  transition: background-color .5s;
+  background-color: #0e0d0d;
+  transition: background-color 0.5s;
 }
 .itemTodo::-webkit-scrollbar-thumb {
   background-color: #ccc9cc;
   border-radius: 50px;
 }
-.notVisibleItem{
+.notVisibleItem {
   opacity: 0;
   background-color: red;
 }
 
-
-.noteEdit{
-  @include display(center,center, column);
-  h2{
+.noteEdit {
+  @include display(center, center, column);
+  h2 {
     width: 100%;
     text-align: start;
+    padding: 0 0 0 25px;
   }
-  .hour{
-    // background-color: red;
+  .hour {
     position: absolute;
     top: -14px;
-    right: 10px;
+    right: 40%;
     border-radius: 10px;
     width: auto;
     padding: 5px 8px;
@@ -109,54 +110,56 @@
     background-color: #191818;
     border: 1px solid #808080;
   }
-  .containerInputs{
+  .containerInputs {
     width: 100%;
     min-height: 170px;
     // background-color: red;
+    padding: 0 0 0 25px;
     @include display(center, start, column);
-    textarea{
+    textarea {
       width: 56%;
       margin: 10px 0;
     }
     textarea::-webkit-scrollbar {
       width: 4px;
-      background-color: #0E0D0D;
-      transition: background-color .5s;
+      background-color: #0e0d0d;
+      transition: background-color 0.5s;
     }
     textarea::-webkit-scrollbar-thumb {
       background-color: #ccc9cc;
       border-radius: 50px;
     }
-    input{
+    input {
       margin: 10px 0;
     }
   }
-  button{
+  button {
     // background-color: red;
     margin: 10px 0;
   }
-  .date{
+  .date {
     width: 100%;
     min-height: 10px;
+    padding: 0 0 0 25px;
     // background-color: blue;
   }
-  .calendario{
-    width: 36%;
+  .calendario {
+    width: 40%;
     // background-color: red
   }
 }
-.todoEdit{
-  @include display(space-evenly,center, column);
-  .hour{
-    // background-color: red;
+.todoEdit {
+  @include display(space-evenly, center, column);
+  .hour {
     position: absolute;
-    top: -14px;
-    right: 10px;
+    top: -16px;
+    right: 40%;
     border-radius: 10px;
     width: auto;
     padding: 5px 8px;
     min-height: 17px;
     background-color: #191818;
     border: 1px solid #808080;
+    // background-color: red;
   }
 }

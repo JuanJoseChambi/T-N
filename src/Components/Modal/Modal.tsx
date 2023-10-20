@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { modalProps } from "../../Interfaces/interfaces";
 import style from "./Modal.module.scss";
 
@@ -6,8 +5,6 @@ function Modal({styles: propStyle = "", isVisible, isClosing, onClose, children 
   if (!isVisible) {
     return null;
   }
-  useEffect(() => {
-  }, [isVisible]);
 
   const modalStyles = propStyle || style.modal;
   

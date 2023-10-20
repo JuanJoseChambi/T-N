@@ -7,8 +7,9 @@
   background-color: #0e0d0d;
   color: white;
   .TodoList {
-    @include area(1300px, 560px);
-    @include display(space-evenly,center, column);
+    // @include area(1300px, 560px);
+    @include area(1300px, 629px);
+    @include display(space-around,center, column);
     // background-color: blue;
     .titleToDo{
       font-weight: $Thin;
