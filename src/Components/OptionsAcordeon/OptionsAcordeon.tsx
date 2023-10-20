@@ -9,13 +9,13 @@ function OptionsAcordeon({children, icon} : OptionsAcordeonProps) {
 
   return (
     <div className={style.optionsAcordeonComponent}>  
-        <i onClick={() => setOpenOptions(!openOptions)} className={`${icon} ${style.icon}` }></i>
-        {!openOptions ?
-        <div className={style.options}>
+        <i onClick={() => setOpenOptions(!openOptions)} className={`${icon} ${style.icon}`}></i>
+        {/* {openOptions ? */}
+        <div className={`${style.options} ${openOptions? style.optionsVisible: null}`} onMouseLeave={() => setOpenOptions(false)}>
             <i className='bx bx-up-arrow'></i>
             {children}
         </div> 
-        :null }
+        {/* :null } */}
     </div>
   )
 }

@@ -2,11 +2,11 @@
 @import "../../Styles/variables";
 .optionsAcordeonComponent {
   @include display(start, start, column);
-  // background-color: red;
+//   background-color: red;
   position: relative;
   z-index: 100;
   .icon {
-    // background-color: red;
+    // background-color: blue;
     margin: 0px 10px;
     font-size: 23px;
   }
@@ -23,6 +23,8 @@
     position: absolute;
     top: 43px;
     left: -41px;
+    opacity: 0;
+    transition: opacity .5s;
     button {
       color: white;
       font-weight: $ExtraLight;
@@ -40,9 +42,14 @@
       }
     }
     i {
-      // background-color: red;
+      width: 100%;
+      height: 18px;
+      text-align: center;
       position: absolute;
       top: -18px;
     }
+  }
+  .optionsVisible{
+    opacity: 1;
   }
 }
