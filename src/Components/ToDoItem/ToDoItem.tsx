@@ -50,6 +50,8 @@ if (date) {
     onClose()
   }
 
+  // Usar onMouseEnter para el desvanecimiento de todo -----------------------
+
   return ( 
     <>
         <div key={id} className={`${style.itemTodo}`} onClick={isOpen} ref={ToDos}>

@@ -13,20 +13,7 @@
   opacity: 0;
   z-index: 100;
   transition: opacity 0.5s;
-  .btnCloseModal {
-    @include display;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 30px;
-    background-color: transparent;
-    border-radius: 50px;
-    color: gray;
-    transition: color 0.5s;
-    &:hover {
-      color: white;
-    }
-  }
+  
   .notStyle{
     width: 500px;
     height: 300px;
@@ -37,6 +24,20 @@
     position: relative;
     @include shadow(10px, 15px, 15px, 0, rgb(29, 29, 29));
     // background-color: red;
+    .btnCloseModal {
+      @include display;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 30px;
+      background-color: transparent;
+      border-radius: 50px;
+      color: gray;
+      transition: color 0.5s;
+      &:hover {
+        color: white;
+      }
+    }
 
   }
   .notStyle h2{

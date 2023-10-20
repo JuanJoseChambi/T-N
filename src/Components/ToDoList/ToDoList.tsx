@@ -7,7 +7,7 @@ function ToDoList() {
   const { todos } = useSelector((state: RootState) => state.todos);
   const todosOrder = [...todos].reverse().filter(todos => todos.completed === false);
   
-  console.log(todosOrder);
+  // console.log(todosOrder);
   
 
   return (
