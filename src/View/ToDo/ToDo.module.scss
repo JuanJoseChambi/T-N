@@ -8,7 +8,6 @@
   color: white;
   overflow-x: hidden;
   .TodoList {
-    // @include area(1300px, 560px);
     @include area(1300px, 629px);
     @include display(space-around, center, column);
     // background-color: blue;
@@ -29,11 +28,10 @@
 }
 @media (max-width: 950px) {
   .viewToDo {
-    font-size: 11px
+    font-size: 11px;
+    scrollbar-gutter: stable;
+    background-color: red;
   }
-  // .TodoList{
-    // background-color: blue;
-  // }
   .TodoList > *{ 
     margin: 20px 0;
    }

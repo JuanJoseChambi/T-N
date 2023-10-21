@@ -8,6 +8,9 @@ function Modal({styles: propStyle = "", isVisible, isClosing, onClose, children 
 
   const modalStyles = propStyle || style.modal;
   
+  if (isVisible) {
+    document.body.style.overflowY = isVisible ? 'hidden' : 'auto'
+  }
 
   return (
     <div className={`${style.modalComponent} ${isClosing ? style.notVisibleModal : null} ${isVisible ? style.visibleModal : null} `}>
