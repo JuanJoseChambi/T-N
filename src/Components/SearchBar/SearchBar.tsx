@@ -11,6 +11,10 @@ function SearchBar() {
     const inputRef = useRef<HTMLInputElement | null>(null)
     const dispatch = useDispatch()
 
+    // console.log(todos);
+    // console.log(todosBackup);
+    
+
     function handlerReset () {
         dispatch(resetTodos())        
       if (inputRef.current)inputRef.current.value = "";
@@ -36,7 +40,7 @@ function SearchBar() {
           <input className={style.input} type="text" placeholder="Buscar Tarea" onChange={(e) => setSearch(e.target.value)} ref={inputRef} /> 
           <label className={style.iconSearch} ><i className='bx bx-search-alt'></i></label>
       </div>
-      <button className={style.btnReset} onClick={handlerReset}>{todos !== todosBackup ? <i className='bx bx-refresh' ></i>:  null}</button>
+      <button className={style.btnReset} onClick={handlerReset}>{todos.length !== todosBackup.length ? <i className='bx bx-refresh' ></i>:  null}</button>
     </div>
   )
 }

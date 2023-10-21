@@ -40,6 +40,9 @@
   margin: 0px 10px;
   cursor: pointer;
 }
-// .divClicked{
-//     width: 30%;
-// }
+@media (max-width: 950px) {
+  .searchComponent{
+    width: 60%;
+  }
+}
+
