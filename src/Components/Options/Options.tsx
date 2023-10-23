@@ -48,7 +48,6 @@ function Options() {
       }
       
 
-        document.body.style.overflowY = isVisibleCreateNote || isVisibleCreateTodo? 'hidden' : 'auto'
 
   return (
     <>

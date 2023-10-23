@@ -61,7 +61,7 @@ if (date) {
             <p className={`${completed ? style.textCompleted: style.incompleted}`}>{text}</p>
           </div>
           <div className={style.date}>{fecha}</div>
-          <button onClick={() => handlerDeleteToDo(id)} className={style.deleteTodo}>🗑</button>
+          <button onClick={() => handlerDeleteToDo(id)} className={style.deleteTodo}><i className='bx bx-trash'></i></button>
         </div>
       <Modal styles={title ? style.noteEdit : style.todoEdit} isVisible={isVisible} isClosing={isClosing} onClose={onClose}>
         <h2>Editar {title? "Nota" : "Tarea"}</h2>

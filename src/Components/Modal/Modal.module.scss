@@ -4,18 +4,18 @@
 .modalComponent {
   @include display(center, center, row);
   width: 100%;
-  height: 100vh;
+  height: 120vh;
   position: absolute;
   overflow-x: hidden;
   scrollbar-gutter: stable;
   top: 0;
   left: 0;
   background-color: #00000090;
-  // background-color: red;
   opacity: 0;
   z-index: 100;
   transition: opacity 0.5s;
-  
+  // background-color: red;
+
   .notStyle{
     width: 500px;
     height: 300px;
@@ -99,6 +99,7 @@
     padding: 10px;
     border: 1px solid gray;
     @include shadow(10px, 15px, 15px, 0, rgb(29, 29, 29));
+  
   }
   .modal h2 {
     font-size: 35px;
