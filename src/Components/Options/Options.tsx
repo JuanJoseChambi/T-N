@@ -6,8 +6,8 @@ import Button from "../Button/Button";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../../Redux/Actions/Actions";
 import { Todo } from "../../Interfaces/interfaces";
-import DatePicker, { registerLocale } from "react-datepicker"; // Importa react-datepicker
-import "react-datepicker/dist/react-datepicker.css"; // Importa el estilo CSS de react-datepicker
+import DatePicker, { registerLocale } from "react-datepicker"; 
+import "react-datepicker/dist/react-datepicker.css"; 
 import es from "date-fns/locale/es";
 registerLocale("es", es)
 
@@ -25,11 +25,6 @@ function Options() {
     const [isVisibleCreateTodo, setIsVisibleCreateTodo] = useState(false)
     const [isVisibleCreateNote, setIsVisibleCreateNote] = useState(false)
 
-    function handlerOpenCreateTodo () {setIsVisibleCreateTodo(true)}
-    
-    function handlerOpenCreateNote () {setIsVisibleCreateNote(true)}
-    // const {isVisible, isClosing, isOpen, onClose} = useFade()
-
       function hashId () {
         const hash = (Math.random()*100).toString()
         return hash.toString()
@@ -37,7 +32,7 @@ function Options() {
 
       function handlerSendTodo () { 
         if (newToDo.id && newToDo.text)  {
-          console.log("Tiene Id");
+          // console.log("Tiene Id");
           dispatch(addTodo(newToDo)) 
           setIsVisibleCreateNote(false)
           setIsVisibleCreateTodo(false)
@@ -49,18 +44,17 @@ function Options() {
             completed: false,
             date: new Date()
           })
-        }else{
-          console.log("No tiene Id");
         }
       }
+      
 
         document.body.style.overflowY = isVisibleCreateNote || isVisibleCreateTodo? 'hidden' : 'auto'
 
   return (
     <>
         <div className={`${style.optionsComponent}`} ref={divRef} >
-            <Button onClick={handlerOpenCreateTodo}>Crear Tarea</Button>
-            <Button onClick={handlerOpenCreateNote}>Crear Nota</Button>
+            <Button onClick={() => setIsVisibleCreateTodo(true)}>Crear Tarea</Button>
+            <Button onClick={() => setIsVisibleCreateNote(true)}>Crear Nota</Button>
         </div>
         <Modal isVisible={isVisibleCreateTodo} isClosing={!isVisibleCreateTodo} onClose={() => setIsVisibleCreateTodo(false)}>
             <h2>Crear Tarea</h2>
