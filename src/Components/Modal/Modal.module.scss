@@ -73,7 +73,8 @@
   }
   .notStyle textarea {
     border-radius: 5px;
-    resize: vertical;
+    min-width: 300px;
+    max-width: 400px;
     min-height: 50px;
     max-height: 90px;
     padding: 7px 8px;
