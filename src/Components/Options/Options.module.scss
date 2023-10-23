@@ -2,8 +2,6 @@
 @import "../../Styles/variables";
 
 .optionsComponent {
-  @include display(center,center, column);
-  @include area(150px, 50px);
   color: black;
   // background-color: gray;
   button{
@@ -27,6 +25,20 @@
   width: 100%;
   position: relative;
   text-align: center;
+}
+@media (max-width: 950px) {
+ .optionsComponent{ 
+   @include display(space-evenly,center, row);
+  //  max-width: 300px;
+  // @include area(70px, 50px);
+  }
+}
+@media (min-width: 950px)  {
+  .optionsComponent{
+    @include display(center,center, column);
+    @include area(150px, 50px);
+  }
+
 }
 
 // .divActive{

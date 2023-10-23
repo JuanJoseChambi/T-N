@@ -7,7 +7,7 @@
   position: relative;
 }
 .searchComponent {
-  @include area(30%, auto);
+  @include area(350px, auto);
   @include display(center, center, row);
   background-color: #ffffff;
   border-radius: 55px;
@@ -39,12 +39,12 @@
 }
 @media (max-width: 950px) {
   .searchComponent{
-    width: 45%;
+    width: 300px;
   }
 }
-@media (max-width: 700px) {
+@media (min-width: 950px)  {
   .searchComponent{
-    width: 60%;
+    width: 350px;
   }
 }
 
