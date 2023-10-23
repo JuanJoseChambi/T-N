@@ -59,7 +59,7 @@ function Options() {
             <h2>Crear Tarea</h2>
             <p>{newToDo.text?"Presione Enter para Anadir Tarea":null}</p>
             <input type="text" placeholder="Tarea" onKeyDown={(e) => {e.key === "Enter" ? handlerSendTodo() : null}} onChange={(e) => setNewToDo({...newToDo, text:e.target.value, id: hashId()})}/>
-            <DatePicker popperPlacement="bottom" wrapperClassName={style.calendario} showTimeSelect={true} dateFormat={"dd-MM-yyyy"} locale={"es"} className={style.calendario} selected={newToDo.date ? new Date(newToDo.date) : null} onChange={(date: Date | null ) => setNewToDo({ ...newToDo, date })}/>
+            <DatePicker popperPlacement="top" wrapperClassName={style.calendario} showTimeSelect={true} dateFormat={"dd-MM-yyyy"} locale={"es"} className={style.calendario} selected={newToDo.date ? new Date(newToDo.date) : null} onChange={(date: Date | null ) => setNewToDo({ ...newToDo, date })}/>
             <Button onClick={handlerSendTodo}>Crear Tarea</Button>
             <b>{!newToDo.text? errors: null}</b>
         </Modal>
@@ -67,7 +67,7 @@ function Options() {
           <h2>Crear Nota</h2>
           <input type="text" placeholder="Titulo" onKeyDown={(e) => {e.key === "Enter" ? handlerSendTodo() : null}} onChange={(e) => setNewToDo({...newToDo, title: e.target.value, id: hashId()})}/>
           <textarea placeholder="Nota" onChange={(e) => setNewToDo({...newToDo, text: e.target.value})}></textarea>
-          <DatePicker popperPlacement="bottom" wrapperClassName={style.calendario} showTimeSelect={true} dateFormat={"dd-MM-yyyy"} locale={"es"} className={style.calendario} selected={newToDo.date ? new Date(newToDo.date) : null} onChange={(date: Date | null ) => setNewToDo({ ...newToDo, date })}/>
+          <DatePicker popperPlacement="top" wrapperClassName={style.calendario} showTimeSelect={true} dateFormat={"dd-MM-yyyy"} locale={"es"} className={style.calendario} selected={newToDo.date ? new Date(newToDo.date) : null} onChange={(date: Date | null ) => setNewToDo({ ...newToDo, date })}/>
           <Button onClick={handlerSendTodo}>Crear Nota</Button>
         </Modal>
     </>
