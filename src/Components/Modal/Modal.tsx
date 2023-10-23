@@ -4,7 +4,6 @@ import style from "./Modal.module.scss";
 
 function Modal({ styles: propStyle = "", isVisible, isClosing, onClose, children }: modalProps) {
   useEffect(() => {
-    // Función para calcular y establecer la posición del modal
     function setModalPosition() {
       if (isVisible) {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
