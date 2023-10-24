@@ -1,7 +1,8 @@
 
 // --------------------------------
 export interface Children {
-    children: (string | JSX.Element)[] 
+    children: JSX.Element[] | JSX.Element | string | string[]
+    // children: (string | JSX.Element)
 }
 // --------------------------------
 
