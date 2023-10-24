@@ -1,7 +1,7 @@
 
 // --------------------------------
 export interface Children {
-    children: JSX.Element[] | JSX.Element | string | string[]
+    children: JSX.Element[] | JSX.Element | string
     // children: (string | JSX.Element)
 }
 // --------------------------------
@@ -38,8 +38,10 @@ export interface modalProps extends Omit<PropsUseFade, 'isOpen'>  {
 
 
 // --------------------------------
-export interface btnsProps extends Children {
+export interface btnsProps {
     onClick: () => void
+    children: JSX.Element[] | JSX.Element | string | string[]
+
 }
 // --------------------------------
 
