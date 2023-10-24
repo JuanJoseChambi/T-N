@@ -73,7 +73,7 @@ if (date) {
         <div className={style.date}>
           <DatePicker popperPlacement="top" wrapperClassName={style.calendario} showTimeSelect={true} dateFormat={"dd-MM-yyyy"} locale={"es"} className={style.calendario} selected={upDate.date ? new Date(upDate.date) : null} onChange={(date: Date | null ) => setUpDate({ ...upDate, date })}/>
         </div>
-        <Button onClick={handlerUpDate}>Editar {title? "Nota" : "Tarea" }</Button>
+        <Button onClick={handlerUpDate}>Editar</Button>
       </Modal>  
     </>
     
